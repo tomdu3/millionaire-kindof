@@ -1,5 +1,7 @@
 # Movie Trivia Game
 
+import random
+
 # data from the site https://the-trivia-api.com/
 easy_questions = [
   {
@@ -414,6 +416,19 @@ easy_questions = [
   }
 ]
 
-print(easy_questions[0]['question'])
-print(easy_questions[0]['correctAnswer'])
-print(easy_questions[0]['incorrectAnswers'])
+# print(easy_questions[0]['question'])
+# print(easy_questions[0]['correctAnswer'])
+# print(easy_questions[0]['incorrectAnswers'])
+
+def choose_question(level):
+    if (level=='easy'):
+        question = random.choice(easy_questions)
+    else:
+        raise ValueError('Invalid level Value')
+    answers = question['incorrectAnswers'][:]
+    answers.append(question['correctAnswer'])
+    random.shuffle(answers)
+    selected_question = question['question']
+    return selected_question, answers
+
+print(choose_question('easy'))
