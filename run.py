@@ -1,10 +1,8 @@
 # Movie Trivia Game
+
+
 from questions import *
 import random
-
-# print(easy_questions[0]['question'])
-# print(easy_questions[0]['correctAnswer'])
-# print(easy_questions[0]['incorrectAnswers'])
 
 
 def choose_question(level):
@@ -14,8 +12,14 @@ def choose_question(level):
     '''
     if (level == 'easy'):
         question = random.choice(easy_questions)
+    elif level == 'medium':
+        question = random.choice(medium_questions)
+    elif level == 'hard':
+        question = random.choice(hard_questions)
     else:
         raise ValueError('Invalid level Value')
+    # copy the incorrect answers with a correct one into
+    # one list and shuffle it
     answers = question['incorrectAnswers'][:]
     answers.append(question['correctAnswer'])
     random.shuffle(answers)
@@ -23,4 +27,4 @@ def choose_question(level):
     return selected_question, answers
 
 
-print(choose_question('easy'))
+print(choose_question('hard'))
