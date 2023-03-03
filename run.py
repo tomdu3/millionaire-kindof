@@ -2,6 +2,8 @@
 
 from questions import *
 import random
+from termcolor import colored
+import time
 
 class Quiz:
     '''
@@ -72,12 +74,11 @@ def display_question(question_num, question, answers, correct_answer_index):
     select the correct answer and gives the output for the wrong/write
     answer.
     '''
-    print(f'Question No. {question_num}:\n\n')
-    print(question, '\n\n')
+    slow_print(f'Question No. {question_num}: {question}, \n\n', 'yellow', 0.01)
     print('Choose a correct answer: \n')
     abc = ['a', 'b', 'c', 'd']
     for i in range(4):
-        print(f'{abc[i]}. {answers[i]}\n')
+        slow_print(f'{abc[i]}. {answers[i]}\n')
     while True:
         answer = input('Choose a, b, c, or d: \n')
         if answer.lower() not in abc:
@@ -89,6 +90,17 @@ def display_question(question_num, question, answers, correct_answer_index):
         print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}')
     else:
         print(f"You're good! Well done.")
+
+def slow_print(text, color='white', seconds=0.05):
+    '''
+    Slow printing text function with 
+    text, color and time in seconds parameters
+    '''
+
+    for letter in text:
+        print(colored(letter, color), end='', flush=True)
+        time.sleep(seconds)
+    print('')
 
 
 def main():
