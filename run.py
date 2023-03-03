@@ -1,10 +1,34 @@
 # Movie Trivia Game
 
-
 from questions import *
 import random
 
+class Quiz:
+    '''
+    A class for the quiz questions
+    '''
 
+    def __init__(self):
+        self.questions = []
+        self.generate_questions()
+
+    def generate_questions(self):
+        '''
+        generates 15 random questions from the database
+        5 for each difficulty level
+        '''
+
+        if len(self.questions) != 0:
+            self.questions = []
+        level = ['easy', 'medium', 'hard']
+        for i in range(15):
+            (selected_question, all_answers, corr_index) = choose_question(level[i//5])
+            self.questions.append(
+                {'question': selected_question,
+                'answers': all_answers,
+                'correct_answer_index': corr_index,
+                })
+       
 def choose_question(level):
     '''
     Makes a random choice of the questions from the dictionaries
@@ -20,6 +44,7 @@ def choose_question(level):
         question = random.choice(hard_questions)
     else:
         raise ValueError('Invalid level Value')
+        
     # copy the incorrect answers with a correct one into
     # one list and shuffle it
     answers = question['incorrectAnswers'][:]
@@ -51,11 +76,20 @@ def display_question(question_num, question, answers, correct_answer_index):
         else:
             break
     if abc.index(answer) != correct_answer_index:
-        print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}')
+        print(f'That is not the right answer. Right answer is\
+        {abc[correct_answer_index]}')
     else:
         print(f"You're good! Well done.")
 
-
-(select_question, all_answers, corr_index) = choose_question('hard')
-display_question(1, select_question, all_answers, corr_index)
-
+def main():
+    '''
+    A main function responsible for the game control.
+    '''
+    quiz = Quiz()
+    print(quiz)
+    display_question(
+        1, quiz.questions[0]['question'],
+        quiz.questions[0]['answers'],
+        quiz.questions[0]['correct_answer_index'])
+    
+main()
