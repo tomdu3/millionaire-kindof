@@ -86,7 +86,7 @@ def display_question(question_num, question, answers, correct_answer_index):
             continue
         else:
             break
-    if abc.index(answer) != correct_answer_index:
+    if abc.index(answer.lower()) != correct_answer_index:
         print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}')
     else:
         print(f"You're good! Well done.")
