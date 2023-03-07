@@ -74,7 +74,7 @@ def display_question(question_num, question, answers, correct_answer_index):
     select the correct answer and gives the output for the wrong/write
     answer.
     '''
-    slow_print(f'Question No. {question_num}: {question}, \n\n', 'yellow', 0.01)
+    slow_print(f'Question No. {question_num}: {question}, \n\n', 'yellow')
     print('Choose a correct answer: \n')
     abc = ['a', 'b', 'c', 'd']
     for i in range(4):
@@ -87,11 +87,11 @@ def display_question(question_num, question, answers, correct_answer_index):
         else:
             break
     if abc.index(answer.lower()) != correct_answer_index:
-        print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}')
+        slow_print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}', 'red')
     else:
         print(f"You're good! Well done.")
 
-def slow_print(text, color='white', seconds=0.05):
+def slow_print(text, color='white', seconds=0.001):
     '''
     Slow printing text function with 
     text, color and time in seconds parameters
@@ -102,10 +102,9 @@ def slow_print(text, color='white', seconds=0.05):
         time.sleep(seconds)
     print('')
 
-
-def main():
+def quiz_start(name):
     '''
-    A main function responsible for the game control.
+    Quiz control function
     '''
     quiz = Quiz()
     print(quiz)
@@ -115,5 +114,20 @@ def main():
             quiz.questions[i]['answers'],
             quiz.questions[i]['correct_answer_index'])  
 
+def main():
+    '''
+    A main function.
+    '''
+    name = ''
+    while not name:
+        name = input('Insert your name: ')
+        if name.isdigit():
+            slow_print('Who gave you that name? Please, choose something else!')
+            name = ''
+    quiz_start(name)
+
+
+
+            
 
 main()
