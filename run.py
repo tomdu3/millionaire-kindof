@@ -1,8 +1,9 @@
 # Movie Trivia Game
 
+import getch
+import os
 import random
 import time
-import getch
 from questions import *
 from termcolor import colored
 
@@ -51,6 +52,21 @@ def intro_screen():
     print(f'Key {key} pressed...')
 
     return
+
+def clear_screen():
+    '''
+    Clears the terminal screen
+    '''
+
+
+    # detect if the script is run on MS Windows system
+    # and uses the corresponding command
+    if os.name == 'nt':
+        os.system('cls')
+
+    # for Linux/MacOs different clear command
+    else:
+        os.system('clear')
 
 def choose_question(level):
     '''
@@ -130,7 +146,7 @@ def main():
     A main function.
     '''
 
-
+    clear_screen()
     intro_screen()
 
     name = ''
