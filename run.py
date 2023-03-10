@@ -1,9 +1,10 @@
 # Movie Trivia Game
 
-from questions import *
 import random
-from termcolor import colored
 import time
+import getch
+from questions import *
+from termcolor import colored
 
 class Quiz:
     '''
@@ -44,7 +45,12 @@ def intro_screen():
     '''
     TODO: Intro into the game
     '''
-    pass
+
+    print('Please, press a key...')
+    key = getch.getch()
+    print(f'Key {key} pressed...')
+
+    return
 
 def choose_question(level):
     '''
@@ -134,8 +140,6 @@ def main():
             slow_print('Who gave you that name? Please, choose something else!')
             name = ''
     quiz_start(name)
-
-
 
             
 
