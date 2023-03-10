@@ -40,6 +40,11 @@ class Quiz:
                 else:
                     print('Yeah!')
 
+def intro_screen():
+    '''
+    TODO: Intro into the game
+    '''
+    pass
 
 def choose_question(level):
     '''
@@ -118,6 +123,10 @@ def main():
     '''
     A main function.
     '''
+
+
+    intro_screen()
+
     name = ''
     while not name:
         name = input('Insert your name: ')
