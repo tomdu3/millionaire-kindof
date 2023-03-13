@@ -129,6 +129,19 @@ def slow_print(text, color='white', seconds=0.001):
         time.sleep(seconds)
     print('')
 
+
+def insert_username():
+    '''
+    Insert username function
+    '''
+
+    name = ''
+    while not name:
+        name = input('Insert your name: ')
+        if name.isdigit():
+            slow_print('Who gave you that name? Please, choose something else!')
+            name = ''
+
 def quiz_start(name):
     '''
     Quiz control function
@@ -148,13 +161,8 @@ def main():
 
     clear_screen()
     intro_screen()
-
-    name = ''
-    while not name:
-        name = input('Insert your name: ')
-        if name.isdigit():
-            slow_print('Who gave you that name? Please, choose something else!')
-            name = ''
+    name = insert_username()
+    
     quiz_start(name)
 
             
