@@ -47,9 +47,13 @@ def intro_screen():
     TODO: Intro into the game
     '''
 
-    print('Please, press a key...')
+    with open('./assets/text_files/titles.txt', 'r') as titles:
+        for line in titles:
+            slow_print(line, 'yellow', .01)
+    
+    print('\n\nPlease, press a key...')
     key = getch.getch()
-    print(f'Key {key} pressed...')
+    print(f'Key {key} pressed...\n\n')
 
     return
 
@@ -114,7 +118,7 @@ def display_question(question_num, question, answers, correct_answer_index):
         else:
             break
     if abc.index(answer.lower()) != correct_answer_index:
-        slow_print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}', 'red')
+        slow_print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}.\n', 'red')
     else:
         print(f"You're good! Well done.")
 
@@ -127,7 +131,6 @@ def slow_print(text, color='white', seconds=0.001):
     for letter in text:
         print(colored(letter, color), end='', flush=True)
         time.sleep(seconds)
-    print('')
 
 
 def insert_username():
