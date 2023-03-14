@@ -44,18 +44,26 @@ class Quiz:
 
 def intro_screen():
     '''
-    TODO: Intro into the game
+    Intro into the game
     '''
 
     with open('./assets/text_files/titles.txt', 'r') as titles:
         for line in titles:
             slow_print(line, 'yellow', .01)
     
-    print('\n\nPlease, press a key...')
-    key = getch.getch()
-    print(f'Key {key} pressed...\n\n')
+    key_press()
+    
+    rules()
 
     return
+
+
+def key_press():
+    print('\n\nPlease, press a key...')
+    key = getch.getch()
+
+    return
+
 
 def clear_screen():
     '''
@@ -63,7 +71,7 @@ def clear_screen():
     '''
 
 
-    # detect if the script is run on MS Windows system
+    # detects if the script is run on MS Windows system
     # and uses the corresponding command
     if os.name == 'nt':
         os.system('cls')
@@ -71,6 +79,18 @@ def clear_screen():
     # for Linux/MacOs different clear command
     else:
         os.system('clear')
+
+
+def rules():
+    '''
+    Prints out the info about how to play the game
+    '''
+    clear_screen()
+    slow_print('Just something to have it here', 'blue', 0.01)
+    key_press()
+
+    return
+
 
 def choose_question(level):
     '''
@@ -162,10 +182,13 @@ def main():
     A main function.
     '''
 
-    clear_screen()
     intro_screen()
     name = insert_username()
     
+    # Menu section
+    while True:
+        pass
+
     quiz_start(name)
 
             
