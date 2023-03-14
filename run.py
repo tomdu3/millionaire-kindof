@@ -47,6 +47,7 @@ def intro_screen():
     Intro into the game
     '''
 
+    clear_screen()
     with open('./assets/text_files/titles.txt', 'r') as titles:
         for line in titles:
             slow_print(line, 'yellow', .01)
@@ -89,6 +90,18 @@ def rules():
     slow_print('Just something to have it here', 'blue', 0.01)
     key_press()
 
+    return
+
+def titles():
+    '''
+    Print Quiz game title header
+    '''
+    with open('./assets/text_files/titles-heading.txt', 'r') as f:
+        heading = f.read()
+    
+    clear_screen()
+    slow_print(heading, 'blue', 0.01)
+    
     return
 
 
@@ -165,12 +178,16 @@ def insert_username():
             slow_print('Who gave you that name? Please, choose something else!')
             name = ''
 
-def quiz_start(name):
+def quiz_start():
     '''
     Quiz control function
     '''
+    
     quiz = Quiz()
-    print(quiz)
+        
+    titles()
+    name = insert_username()
+
     for i in range(15):
         display_question(
             i+1, quiz.questions[i]['question'],
@@ -183,13 +200,13 @@ def main():
     '''
 
     intro_screen()
-    name = insert_username()
     
     # Menu section
-    while True:
-        pass
+    clear_screen()
+    # while True:
+    #     pass
 
-    quiz_start(name)
+    quiz_start()
 
             
 
