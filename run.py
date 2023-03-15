@@ -60,7 +60,7 @@ def intro_screen():
 
 
 def key_press():
-    print('\n\nPlease, press a key...')
+    print('\nPlease, press a key...')
     key = getch.getch()
 
     return
@@ -158,7 +158,7 @@ def insert_username():
     return name
 
 
-def display_question(question_num, question, answers, correct_answer_index):
+def display_question(name, question_num, question, answers, correct_answer_index):
     '''
     The function displays the question by writing a question order number,
     the question itself and all the answers. It asks for a user to
@@ -168,7 +168,7 @@ def display_question(question_num, question, answers, correct_answer_index):
     titles(False)
     treshold = question_points[(question_num-1)//5*5] if question_num > 5 else 0
     slow_print(f'{50*" "}Points guaranteed: {"{:,}".format(treshold)}', 'red') 
-    slow_print(f'\nQuestion for {"{:,}".format(question_points[question_num])}:', 'yellow')
+    slow_print(f'\n{name}, this is a question for {"{:,}".format(question_points[question_num])} points:', 'yellow')
     slow_print(f'\n\n {question}')
     print('\n\nChoose a correct answer: \n')
     choice_list = ['a', 'b', 'c', 'd']
@@ -184,11 +184,11 @@ def display_question(question_num, question, answers, correct_answer_index):
         else:
             break
     if choice_list.index(answer.lower()) != correct_answer_index:
-        slow_print(f'That is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
+        slow_print(f'{name}, that is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
         key_press()
         return treshold, 'end'
     else:
-        print(f"You're good! Well done.")
+        print(f"{name}, you're good! Well done.")
         key_press()
 
 def win(result):
@@ -208,7 +208,9 @@ def quiz_start():
     key_press()
     for i in range(15):
         response = display_question(
-            i+1, quiz.questions[i]['question'],
+            name,
+            i+1,
+            quiz.questions[i]['question'],
             quiz.questions[i]['answers'],
             quiz.questions[i]['correct_answer_index'])  
         if response == 'end':
