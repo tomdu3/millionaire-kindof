@@ -7,6 +7,13 @@ import time
 from questions import *
 from termcolor import colored
 
+MENU = [
+    'a. Start Quiz Game',
+    'b. High Scores',
+    'c. How to Play Instructions',
+    'd. Quit the Game'
+]
+
 class Quiz:
     '''
     A class for the quiz questions
@@ -222,6 +229,15 @@ def quiz_start():
     
     return 'win'
 
+def display_highscores():
+    '''
+    Displays recorded high scores if there are some
+    '''
+
+    titles()
+    slow_print('HIGH SCORES', 'red')
+    key_press()
+    return
 
 def main():
     '''
@@ -231,12 +247,32 @@ def main():
     intro_screen()
     
     # Menu section
-    clear_screen()
-    # while True:
-    #     pass
+    while True:
+        clear_screen()
+        titles(False)
+        for item in MENU:
+            print(colored(item+'\n', 'red'))
+        
+        menu_choice = ''
+        while menu_choice == '':
+            menu_choice = input(colored('Choose a, b, c, or d: ', 'yellow'))
+            if menu_choice.lower() == 'a':
+                result = quiz_start()
+                win(result)
+            elif menu_choice.lower() == 'b':
+                display_highscores()
+            elif menu_choice.lower() == 'c':
+                rules()
+            elif menu_choice.lower() == 'd':
+                exit()
+            else:
+                print('\nWrong input!\n')
+                menu_choice = ''
+        
 
-    result = quiz_start()
-    win(result)
+        
+
+    
             
 
 main()
