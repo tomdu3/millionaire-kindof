@@ -185,11 +185,11 @@ def display_question(name, question_num, question, answers, correct_answer_index
             break
     if choice_list.index(answer.lower()) != correct_answer_index:
         slow_print(f'{name}, that is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
-        key_press()
+        time.sleep(1)
         return treshold, 'end'
     else:
         print(f"{name}, you're good! Well done.")
-        key_press()
+        time.sleep(1)
 
 def win(result):
         pass
