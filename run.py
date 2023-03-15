@@ -175,16 +175,24 @@ def display_question(question_num, question, answers, correct_answer_index):
     for i in range(4):
         slow_print(f'{choice_list[i]}. {answers[i]}\n')
     while True:
-        answer = input(colored('\nChoose a, b, c, or d: \n', 'yellow'))
-        if answer.lower() not in choice_list:
+        answer = input(colored('\nChoose a, b, c, d or q: \n', 'yellow'))
+        if answer.lower() == 'q':
+            return 'end'
+        elif answer.lower() not in choice_list:
             print("\n Invalid input! Please, do as you're told! \n")
             continue
         else:
             break
     if choice_list.index(answer.lower()) != correct_answer_index:
         slow_print(f'That is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
+        key_press()
+        return treshold, 'end'
     else:
         print(f"You're good! Well done.")
+        key_press()
+
+def win(result):
+        pass
 
 
 def quiz_start():
@@ -197,13 +205,21 @@ def quiz_start():
     titles()
     name = insert_username()
     slow_print(f'\n\n\n{name}, you are on the way to be awarded a million useless points!!! WOOHOOOOO!', 'green')
-    slow_print('\n\nPress any key when ready...')
     key_press()
     for i in range(15):
-        display_question(
+        response = display_question(
             i+1, quiz.questions[i]['question'],
             quiz.questions[i]['answers'],
             quiz.questions[i]['correct_answer_index'])  
+        if response == 'end':
+            return 'end'
+        elif isinstance(response, tuple) :
+            return response
+        else:
+            pass
+    
+    return 'win'
+
 
 def main():
     '''
@@ -217,8 +233,8 @@ def main():
     # while True:
     #     pass
 
-    quiz_start()
-
+    result = quiz_start()
+    win(result)
             
 
 main()
