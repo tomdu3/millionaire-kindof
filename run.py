@@ -26,8 +26,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('millionaire_highscores')
-HIGHSCORES = SHEET.worksheet('high_scores')
-
+high_scores = SHEET.worksheet('high_scores')
 
 class Quiz:
     '''
@@ -248,9 +247,22 @@ def display_highscores():
     '''
     Displays recorded high scores if there are some
     '''
+    global high_scores
+
+    data = high_scores.get_all_values()
 
     titles()
-    slow_print('HIGH SCORES', 'red')
+    slow_print('\nHIGH SCORES\n', 'red')
+    if len(data) == 1:
+        slow_print('\nNo scores available\n', 'blue', 0.01)
+    else:
+        print()
+        for index in range(1,len(data)):
+            username = data[index][0]
+            score = "{:,}".format(int(data[index][1]))
+            date = data[index][2]
+            slow_print(f'{username}{(10-len(username))*" "}|{(13-len(score))*" "}{score} | {date}', 'yellow', 0.01)
+    print('\n')
     key_press()
     return
 
