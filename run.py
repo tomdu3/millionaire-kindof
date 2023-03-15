@@ -92,7 +92,7 @@ def rules():
 
     return
 
-def titles():
+def titles(slow_printing=True):
     '''
     Print Quiz game title header
     '''
@@ -100,7 +100,10 @@ def titles():
         heading = f.read()
     
     clear_screen()
-    slow_print(heading, 'blue', 0.01)
+    if slow_printing == True:
+        slow_print(heading, 'blue', 0.01)
+    else:
+        print(colored(heading, 'blue'))
     
     return
 
@@ -148,7 +151,7 @@ def insert_username():
 
     name = ''
     while not name:
-        name = input('Insert your name: ')
+        name = input('\n\nInsert your name: ')
         if name.isdigit():
             slow_print('Who gave you that name? Please, choose something else!')
             name = ''
@@ -162,23 +165,24 @@ def display_question(question_num, question, answers, correct_answer_index):
     select the correct answer and gives the output for the wrong/write
     answer.
     '''
-    titles()
+    titles(False)
     treshold = question_points[(question_num-1)//5*5] if question_num > 6 else 0
     slow_print(f'{50*" "}Points guaranteed: {treshold}', 'red') 
-    slow_print(f'Question for {question_points[question_num]}:\n\n {question[:-1]}, \n\n', 'yellow')
+    slow_print(f'\nQuestion for {question_points[question_num]}:', 'yellow')
+    slow_print(f'\n\n {question}')
     print('\n\nChoose a correct answer: \n')
-    choice = ['a', 'b', 'c', 'd']
+    choice_list = ['a', 'b', 'c', 'd']
     for i in range(4):
-        slow_print(f'{choice[i]}. {answers[i]}\n')
+        slow_print(f'{choice_list[i]}. {answers[i]}\n')
     while True:
-        answer = input('Choose a, b, c, or d: \n')
-        if answer.lower() not in choice:
+        answer = input(colored('\nChoose a, b, c, or d: \n', 'yellow'))
+        if answer.lower() not in choice_list:
             print("\n Invalid input! Please, do as you're told! \n")
             continue
         else:
             break
-    if choice.index(answer.lower()) != correct_answer_index:
-        slow_print(f'That is not the right answer. Right answer is {choice[correct_answer_index]}.\n', 'red')
+    if choice_list.index(answer.lower()) != correct_answer_index:
+        slow_print(f'That is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
     else:
         print(f"You're good! Well done.")
 
