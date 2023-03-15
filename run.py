@@ -166,9 +166,9 @@ def display_question(question_num, question, answers, correct_answer_index):
     answer.
     '''
     titles(False)
-    treshold = question_points[(question_num-1)//5*5] if question_num > 6 else 0
-    slow_print(f'{50*" "}Points guaranteed: {treshold}', 'red') 
-    slow_print(f'\nQuestion for {question_points[question_num]}:', 'yellow')
+    treshold = question_points[(question_num-1)//5*5] if question_num > 5 else 0
+    slow_print(f'{50*" "}Points guaranteed: {"{:,}".format(treshold)}', 'red') 
+    slow_print(f'\nQuestion for {"{:,}".format(question_points[question_num])}:', 'yellow')
     slow_print(f'\n\n {question}')
     print('\n\nChoose a correct answer: \n')
     choice_list = ['a', 'b', 'c', 'd']
