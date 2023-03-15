@@ -130,31 +130,6 @@ def choose_question(level):
     selected_question = question['question']
     return selected_question, answers, answers.index(correct_answer)
 
-
-def display_question(question_num, question, answers, correct_answer_index):
-    '''
-    The function displays the question by writing a question order number,
-    the question itself and all the answers. It asks for a user to
-    select the correct answer and gives the output for the wrong/write
-    answer.
-    '''
-    slow_print(f'Question No. {question_num}: {question}, \n\n', 'yellow')
-    print('Choose a correct answer: \n')
-    abc = ['a', 'b', 'c', 'd']
-    for i in range(4):
-        slow_print(f'{abc[i]}. {answers[i]}\n')
-    while True:
-        answer = input('Choose a, b, c, or d: \n')
-        if answer.lower() not in abc:
-            print("\n Invalid input! Please, do as you're told! \n")
-            continue
-        else:
-            break
-    if abc.index(answer.lower()) != correct_answer_index:
-        slow_print(f'That is not the right answer. Right answer is {abc[correct_answer_index]}.\n', 'red')
-    else:
-        print(f"You're good! Well done.")
-
 def slow_print(text, color='white', seconds=0.001):
     '''
     Slow printing text function with 
@@ -177,6 +152,36 @@ def insert_username():
         if name.isdigit():
             slow_print('Who gave you that name? Please, choose something else!')
             name = ''
+    return name
+
+
+def display_question(question_num, question, answers, correct_answer_index):
+    '''
+    The function displays the question by writing a question order number,
+    the question itself and all the answers. It asks for a user to
+    select the correct answer and gives the output for the wrong/write
+    answer.
+    '''
+    titles()
+    treshold = question_points[(question_num-1)//5*5] if question_num > 6 else 0
+    slow_print(f'{50*" "}Points guaranteed: {treshold}', 'red') 
+    slow_print(f'Question for {question_points[question_num]}:\n\n {question[:-1]}, \n\n', 'yellow')
+    print('\n\nChoose a correct answer: \n')
+    choice = ['a', 'b', 'c', 'd']
+    for i in range(4):
+        slow_print(f'{choice[i]}. {answers[i]}\n')
+    while True:
+        answer = input('Choose a, b, c, or d: \n')
+        if answer.lower() not in choice:
+            print("\n Invalid input! Please, do as you're told! \n")
+            continue
+        else:
+            break
+    if choice.index(answer.lower()) != correct_answer_index:
+        slow_print(f'That is not the right answer. Right answer is {choice[correct_answer_index]}.\n', 'red')
+    else:
+        print(f"You're good! Well done.")
+
 
 def quiz_start():
     '''
@@ -187,7 +192,9 @@ def quiz_start():
         
     titles()
     name = insert_username()
-
+    slow_print(f'\n\n\n{name}, you are on the way to be awarded a million useless points!!! WOOHOOOOO!', 'green')
+    slow_print('\n\nPress any key when ready...')
+    key_press()
     for i in range(15):
         display_question(
             i+1, quiz.questions[i]['question'],
