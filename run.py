@@ -7,7 +7,7 @@ import time
 import gspread
 import datetime
 from google.oauth2.service_account import Credentials
-from questions import easy_questions, medium_questions, hard_questions
+from questions import easy_questions, medium_questions, hard_questions, question_points
 from termcolor import colored
 
 MENU = [
