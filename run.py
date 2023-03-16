@@ -199,7 +199,7 @@ def display_question(name, question_num, question, answers, correct_answer_index
     while True:
         answer = input(colored('\nChoose a, b, c, d or q: \n', 'yellow'))
         if answer.lower() == 'q':
-            return 'end'
+            return question_points[question_num-1] if question_num > 1 else 0
         elif answer.lower() not in choice_list:
             print("\n Invalid input! Please, do as you're told! \n")
             continue
@@ -208,11 +208,10 @@ def display_question(name, question_num, question, answers, correct_answer_index
     if choice_list.index(answer.lower()) != correct_answer_index:
         slow_print(f'{name}, that is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
         time.sleep(1)
-        return treshold, 'end'
+        return treshold
     else:
         print(f"{name}, you're good! Well done.")
         time.sleep(1)
-
 
 def quiz_start():
     '''
@@ -232,14 +231,12 @@ def quiz_start():
             quiz.questions[i]['question'],
             quiz.questions[i]['answers'],
             quiz.questions[i]['correct_answer_index'])  
-        if response == 'end':
-            return 'end'
-        elif isinstance(response, tuple) :
-            return response
+        if response:
+            return name, response
         else:
             pass
     
-    return 'win'
+    return name, 'win'
 
 def display_highscores():
     '''
@@ -257,12 +254,13 @@ def display_highscores():
     if len(data) == 1:
         slow_print('\nNo scores available\n', 'blue', 0.01)
     else:
+        data = sorted(data[1:], key = lambda x: int(x[1]), reverse=True)
         print()
-        for index in range(1,len(data)):
+        for index in range(len(data)):
             username = data[index][0]
             score = "{:,}".format(int(data[index][1]))
             date = data[index][2]
-            slow_print(f'{username}{(10-len(username))*" "}|{(13-len(score))*" "}{score} | {date}', 'yellow', 0.01)
+            slow_print(f'{username}{(10-len(username))*" "}|{(13-len(score))*" "}{score} | {date}\n', 'yellow', 0.01)
     print('\n')
     key_press()
     return
@@ -274,9 +272,16 @@ def save_highscores(username,score):
     '''
 
     global high_scores
-    date = datetime.date.today().strftime('%Y/%m/%d')
-    new_row = [username, str(score), date]
+    date = datetime.date.today().strftime('%d/%m/%Y')
+    new_row = [username, score, date]
     high_scores.append_row(new_row)
+
+def display_win(name, score):
+    '''
+    Displays the winning screen
+    '''
+
+    pass
 
 def main():
     '''
@@ -310,8 +315,18 @@ def main():
 
 
 def win(result):
-        pass
-
-
+        name = result[0]
+        if result[1] == 'win':
+            score = 1000000
+            save_highscores(name, score)
+            display_win(name, score)
+        elif result[1] == 0:
+            display_win(name, 0)
+        else:
+            score = result[1]
+            save_highscores(name, score)
+            display_win(name, score)
+        
+        return
 
 main()
