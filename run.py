@@ -173,7 +173,7 @@ def insert_username():
 
     name = ''
     while not name:
-        name = input('\n\nInsert your name: ')
+        name = input('\n\nInsert your name: \n')
         if name.isdigit():
             slow_print('Who gave you that name? Please, choose something else!')
             name = ''
@@ -254,6 +254,7 @@ def display_highscores():
     if len(data) == 1:
         slow_print('\nNo scores available\n', 'blue', 0.01)
     else:
+        # sorting the list of lists was adapted from https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/
         data = sorted(data[1:], key = lambda x: int(x[1]), reverse=True)
         print()
         for index in range(len(data)):
@@ -299,7 +300,7 @@ def main():
         
         menu_choice = ''
         while menu_choice == '':
-            menu_choice = input(colored('Choose a, b, c, or d: ', 'yellow'))
+            menu_choice = input(colored('Choose a, b, c, or d: \n\n', 'yellow'))
             if menu_choice.lower() == 'a':
                 result = quiz_start()
                 win(result)
