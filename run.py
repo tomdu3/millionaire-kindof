@@ -6,9 +6,14 @@ import random
 import time
 import gspread
 import datetime
+import sys
 from google.oauth2.service_account import Credentials
-from questions import easy_questions, medium_questions, hard_questions, question_points
 from termcolor import colored
+
+# import path to the questions_data
+sys.path.insert(0, './assets/code')
+
+from questions import easy_questions, medium_questions, hard_questions, question_points
 
 MENU = [
     'a. Start Quiz Game',
@@ -59,10 +64,8 @@ class Quiz:
                         'answers': all_answers,
                         'correct_answer_index': correct_answer_index,
                         })
-                    print('No!')
                     break
-                else:
-                    print('Yeah!')
+                
 
 def intro_screen():
     '''
@@ -72,7 +75,7 @@ def intro_screen():
     clear_screen()
     with open('./assets/text_files/titles.txt', 'r') as titles:
         for line in titles:
-            slow_print(line, 'yellow', .01)
+            slow_print(line, 'yellow')
     
     key_press()
     
@@ -109,7 +112,7 @@ def rules():
     Prints out the info about how to play the game
     '''
     clear_screen()
-    slow_print('Just something to have it here', 'blue', 0.01)
+    slow_print('Until the Rules are completed I am putting this text here', 'blue')
     key_press()
 
     return
@@ -123,7 +126,7 @@ def titles(slow_printing=True):
     
     clear_screen()
     if slow_printing == True:
-        slow_print(heading, 'blue', 0.01)
+        slow_print(heading, 'blue')
     else:
         print(colored(heading, 'blue'))
     
@@ -155,7 +158,7 @@ def choose_question(level):
     selected_question = question['question']
     return selected_question, answers, answers.index(correct_answer)
 
-def slow_print(text, color='white', seconds=0.001):
+def slow_print(text, color='white', seconds=0.005):
     '''
     Slow printing text function with 
     text, color and time in seconds parameters
@@ -173,9 +176,15 @@ def insert_username():
 
     name = ''
     while not name:
-        name = input('\n\nInsert your name: \n')
+        name = input(colored('\n\nInsert name - min 3 characters long, not only numbers and no spaces: \n', 'yellow')).strip()
         if name.isdigit():
-            slow_print('Who gave you that name? Please, choose something else!')
+            slow_print('Invalid name. Cannot be only a number!', 'red')
+            name = ''
+        elif len(name) < 3:
+            slow_print('Invalid name length. Remember, at least 3 letters!', 'red')
+            name = ''
+        elif ' ' in name:
+            slow_print('Invalid name. No spaces!', 'red')
             name = ''
     return name
 
@@ -251,7 +260,7 @@ def display_highscores():
     titles()
     slow_print('\nHIGH SCORES\n', 'red')
     if len(data) == 1:
-        slow_print('\nNo scores available\n', 'blue', 0.01)
+        slow_print('\nNo scores available\n', 'blue')
     else:
         # sorting the list of lists was adapted from https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/
         data = sorted(data[1:], key = lambda x: int(x[1]), reverse=True)
@@ -260,7 +269,7 @@ def display_highscores():
             username = data[index][0]
             score = "{:,}".format(int(data[index][1]))
             date = data[index][2]
-            slow_print(f'{username}{(10-len(username))*" "}|{(13-len(score))*" "}{score} | {date}\n', 'yellow', 0.01)
+            slow_print(f'{username}{(10-len(username))*" "}|{(13-len(score))*" "}{score} | {date}\n', 'yellow')
     print('\n')
     key_press()
     return
@@ -287,7 +296,7 @@ def display_win(name, score):
         with open('./assets/text_files/millionaire.txt', 'r') as congrats:
             message = congrats.read()
         print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow', 0.01)
+        slow_print(message, 'yellow')
         print(colored(f'\n\n{name} is our newest millionaire!!!', 'yellow'))
         slow_print('\nYeeeeeaaaaah! Just a reminder - you have received a million points.\n')
         key_press()
@@ -295,7 +304,7 @@ def display_win(name, score):
         with open('./assets/text_files/good_try.txt', 'r') as congrats:
             message = congrats.read()
         print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow', 0.01)
+        slow_print(message, 'yellow')
         print(colored(f'\n\n{name}, you are not far away from the goal!', 'yellow'))
         slow_print('\nYou entered into the high scores...\n')
         key_press()
@@ -303,7 +312,7 @@ def display_win(name, score):
         with open('./assets/text_files/good_start.txt', 'r') as congrats:
             message = congrats.read()
         print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow', 0.01)
+        slow_print(message, 'yellow')
         print(colored(f'\n\n{name}, that was a first step!', 'yellow'))
         slow_print('\nYou entered into the high scores...\n')
         key_press()
@@ -311,7 +320,7 @@ def display_win(name, score):
         with open('./assets/text_files/what.txt', 'r') as congrats:
             message = congrats.read()
         print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow', 0.01)
+        slow_print(message, 'yellow')
         print(colored(f'\n{name}, are you tired!', 'yellow'))
         slow_print('\nRelax and try again...\n')
         key_press()
@@ -333,15 +342,15 @@ def main():
         
         menu_choice = ''
         while menu_choice == '':
-            menu_choice = input(colored('Choose a, b, c, or d: \n\n', 'yellow'))
-            if menu_choice.lower() == 'a':
+            menu_choice = input(colored('Choose a, b, c, or d: \n\n', 'yellow')).lower().strip()
+            if menu_choice == 'a':
                 result = quiz_start()
                 win(result)
-            elif menu_choice.lower() == 'b':
+            elif menu_choice == 'b':
                 display_highscores()
-            elif menu_choice.lower() == 'c':
+            elif menu_choice == 'c':
                 rules()
-            elif menu_choice.lower() == 'd':
+            elif menu_choice == 'd':
                 return
             else:
                 print('\nWrong input!\n')
