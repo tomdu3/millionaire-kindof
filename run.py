@@ -230,8 +230,8 @@ def quiz_start():
             i+1,
             quiz.questions[i]['question'],
             quiz.questions[i]['answers'],
-            quiz.questions[i]['correct_answer_index'])  
-        if response:
+            quiz.questions[i]['correct_answer_index'])
+        if response in [0, 1000, 32000]:
             return name, response
         else:
             pass
@@ -243,7 +243,6 @@ def display_highscores():
     Displays recorded high scores if there are some from
     the Google Sheets
     '''
-
 
     global high_scores
 
@@ -295,6 +294,7 @@ def main():
     while True:
         clear_screen()
         titles(False)
+        print('\n\n\n')
         for item in MENU:
             print(colored(item+'\n', 'red'))
         
