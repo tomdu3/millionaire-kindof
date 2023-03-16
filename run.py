@@ -5,6 +5,7 @@ import os
 import random
 import time
 import gspread
+import datetime
 from google.oauth2.service_account import Credentials
 from questions import *
 from termcolor import colored
@@ -212,9 +213,6 @@ def display_question(name, question_num, question, answers, correct_answer_index
         print(f"{name}, you're good! Well done.")
         time.sleep(1)
 
-def win(result):
-        pass
-
 
 def quiz_start():
     '''
@@ -245,8 +243,11 @@ def quiz_start():
 
 def display_highscores():
     '''
-    Displays recorded high scores if there are some
+    Displays recorded high scores if there are some from
+    the Google Sheets
     '''
+
+
     global high_scores
 
     data = high_scores.get_all_values()
@@ -265,6 +266,17 @@ def display_highscores():
     print('\n')
     key_press()
     return
+
+def save_highscores(username,score):
+    '''
+    After winning some points in the game, this function saves
+    the high score to the Google Sheets
+    '''
+
+    global high_scores
+    date = datetime.date.today().strftime('%Y/%m/%d')
+    new_row = [username, str(score), date]
+    high_scores.append_row(new_row)
 
 def main():
     '''
@@ -295,11 +307,11 @@ def main():
             else:
                 print('\nWrong input!\n')
                 menu_choice = ''
-        
 
-        
 
-    
-            
+def win(result):
+        pass
+
+
 
 main()
