@@ -118,7 +118,7 @@ def titles(slow_printing=True):
     '''
     Print Quiz game title header
     '''
-    with open('./assets/text_files/titles-heading.txt', 'r') as f:
+    with open('./assets/text_files/titles_heading.txt', 'r') as f:
         heading = f.read()
     
     clear_screen()
@@ -281,7 +281,40 @@ def display_win(name, score):
     Displays the winning screen
     '''
 
-    pass
+    clear_screen()
+    titles(False)
+    if score == 1000000:
+        with open('./assets/text_files/millionaire.txt', 'r') as congrats:
+            message = congrats.read()
+        print(f'GAME OVER with total of {"{:,}".format(score)}.')
+        slow_print(message, 'yellow', 0.01)
+        print(colored(f'\n\n{name} is our newest millionaire!!!', 'yellow'))
+        slow_print('\nYeeeeeaaaaah! Just a reminder - you have received a million points.\n')
+        key_press()
+    elif score >= 32000:
+        with open('./assets/text_files/good_try.txt', 'r') as congrats:
+            message = congrats.read()
+        print(f'GAME OVER with total of {"{:,}".format(score)}.')
+        slow_print(message, 'yellow', 0.01)
+        print(colored(f'\n\n{name}, you are not far away from the goal!', 'yellow'))
+        slow_print('\nYou entered into the high scores...\n')
+        key_press()
+    elif score > 0:
+        with open('./assets/text_files/good_start.txt', 'r') as congrats:
+            message = congrats.read()
+        print(f'GAME OVER with total of {"{:,}".format(score)}.')
+        slow_print(message, 'yellow', 0.01)
+        print(colored(f'\n\n{name}, that was a first step!', 'yellow'))
+        slow_print('\nYou entered into the high scores...\n')
+        key_press()
+    else:
+        with open('./assets/text_files/what.txt', 'r') as congrats:
+            message = congrats.read()
+        print(f'GAME OVER with total of {"{:,}".format(score)}.')
+        slow_print(message, 'yellow', 0.01)
+        print(colored(f'\n{name}, are you tired!', 'yellow'))
+        slow_print('\nRelax and try again...\n')
+        key_press()
 
 def main():
     '''
@@ -309,7 +342,7 @@ def main():
             elif menu_choice.lower() == 'c':
                 rules()
             elif menu_choice.lower() == 'd':
-                exit()
+                return
             else:
                 print('\nWrong input!\n')
                 menu_choice = ''
