@@ -1,6 +1,6 @@
                        
 This is an hommage to the Who Wants To Be a Millionaire TV game.
-At the first screen, you are given the self-explanatory Menu choice.
+On the first screen, you are given the self-explanatory Menu choice.
 
 When you choose to start the game, you are first asked to insert your name.
 
