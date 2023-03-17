@@ -355,7 +355,7 @@ def quiz_end(name, score):
         message, shout, disclaimer = details_win(4, name)
 
     print(f'GAME OVER with total of {"{:,}".format(score)}.')
-    slow_print(message, 'yellow')
+    slow_print(message, 'white')
     print(shout)
     slow_print(disclaimer)
     key_press()
@@ -400,7 +400,7 @@ def main():
     while True:
         clear_screen()
         titles(False)
-        print('\n\n\n')
+        print('\n M E N U\n\n')
         for item in MENU:
             print(item+'\n')
 
