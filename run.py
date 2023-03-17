@@ -283,7 +283,8 @@ def display_highscores():
             username = data[index][0]
             score = "{:,}".format(int(data[index][1]))
             date = data[index][2]
-            slow_print(f'{username if len(username)<16 else username[:15]}{(15-len(username))*" "}|'
+            slow_print(f'{username if len(username)<16 else username[:15]}'
+                       f'{(15-len(username))*" "}|'
                        f'{(13-len(score))*" "}{score} | {date}\n')
     print('\n')
     key_press()
