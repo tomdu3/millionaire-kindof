@@ -291,7 +291,7 @@ def save_highscores(username,score):
 def details_win(case, name):
     '''
     Returns the appropriate elements for the details
-    to display by display_win function
+    to display by quiz_end function
     '''
     
     if case == 1:
@@ -316,12 +316,12 @@ def details_win(case, name):
     else:
         with open('./assets/text_files/what.txt', 'r') as congrats:
             message = congrats.read()
-        shout = (colored(f'\n{name}, are you tired!', 'red'))
+        shout = (colored(f'\n{name}, are you tired?', 'red'))
         disclaimer = '\nRelax and try again...\n'
         return message, shout, disclaimer
 
 
-def display_win(name, score):
+def quiz_end(name, score):
     '''
     Displays the winning(or losing) screen
     '''
@@ -348,13 +348,13 @@ def win(result):
         if result[1] == 'win':
             score = 1000000
             save_highscores(name, score)
-            display_win(name, score)
+            quiz_end(name, score)
         elif result[1] == 0:
-            display_win(name, 0)
+            quiz_end(name, 0)
         else:
             score = result[1]
             save_highscores(name, score)
-            display_win(name, score)
+            quiz_end(name, score)
         
         return
 
