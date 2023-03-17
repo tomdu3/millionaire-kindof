@@ -13,7 +13,7 @@ from termcolor import colored
 # import path to the questions_data
 sys.path.insert(0, './assets/code')
 
-from questions import easy_questions, medium_questions, hard_questions, question_points
+from questions_data import easy_questions, medium_questions, hard_questions, question_points
 
 MENU = [
     'a. Start Quiz Game',
@@ -288,45 +288,86 @@ def save_highscores(username,score):
     new_row = [username, score, date]
     high_scores.append_row(new_row)
 
+def details_win(case, name):
+    '''
+    Returns the appropriate elements for the details
+    to display by display_win function
+    '''
+    
+    if case == 1:
+        with open('./assets/text_files/millionaire.txt', 'r') as congrats:
+            message = congrats.read()
+        
+        shout = (colored(f'\n\n{name} is our newest millionaire!!!', 'red'))
+        disclaimer = ('\nYeeeeeaaaaah! Just a reminder - you have received a million points.\n')
+        return message, shout, disclaimer
+    elif case == 2:
+        with open('./assets/text_files/good_try.txt', 'r') as congrats:
+            message = congrats.read()
+        shout = (colored(f'\n\n{name}, you are not far away from the goal!', 'green'))
+        disclaimer = '\nYou entered into the high scores...\n'
+        return message, shout, disclaimer
+    elif case == 3:
+        with open('./assets/text_files/good_start.txt', 'r') as congrats:
+            message = congrats.read()
+        shout = colored(f'\n\n{name}, that was a first step!', 'blue')
+        disclaimer = '\nYou entered into the high scores...\n'
+        return message, shout, disclaimer
+    else:
+        with open('./assets/text_files/what.txt', 'r') as congrats:
+            message = congrats.read()
+        shout = (colored(f'\n{name}, are you tired!', 'red'))
+        disclaimer = '\nRelax and try again...\n'
+        return message, shout, disclaimer
+
+
 def display_win(name, score):
     '''
-    Displays the winning screen
+    Displays the winning(or losing) screen
     '''
 
     clear_screen()
     titles(False)
     if score == 1000000:
-        with open('./assets/text_files/millionaire.txt', 'r') as congrats:
-            message = congrats.read()
-        print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow')
-        print(colored(f'\n\n{name} is our newest millionaire!!!', 'yellow'))
-        slow_print('\nYeeeeeaaaaah! Just a reminder - you have received a million points.\n')
-        key_press()
+        message, shout, disclaimer = details_win(1, name)
     elif score >= 32000:
-        with open('./assets/text_files/good_try.txt', 'r') as congrats:
-            message = congrats.read()
-        print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow')
-        print(colored(f'\n\n{name}, you are not far away from the goal!', 'yellow'))
-        slow_print('\nYou entered into the high scores...\n')
-        key_press()
+        message, shout, disclaimer = details_win(2, name)
     elif score > 0:
-        with open('./assets/text_files/good_start.txt', 'r') as congrats:
-            message = congrats.read()
-        print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow')
-        print(colored(f'\n\n{name}, that was a first step!', 'yellow'))
-        slow_print('\nYou entered into the high scores...\n')
-        key_press()
+        message, shout, disclaimer = details_win(3, name)
     else:
-        with open('./assets/text_files/what.txt', 'r') as congrats:
-            message = congrats.read()
-        print(f'GAME OVER with total of {"{:,}".format(score)}.')
-        slow_print(message, 'yellow')
-        print(colored(f'\n{name}, are you tired!', 'yellow'))
-        slow_print('\nRelax and try again...\n')
-        key_press()
+        message, shout, disclaimer = details_win(4, name)
+
+    print(f'GAME OVER with total of {"{:,}".format(score)}.')
+    slow_print(message, 'yellow')
+    print(shout)
+    slow_print(disclaimer)
+    key_press()
+
+def win(result):
+        name = result[0]
+        if result[1] == 'win':
+            score = 1000000
+            save_highscores(name, score)
+            display_win(name, score)
+        elif result[1] == 0:
+            display_win(name, 0)
+        else:
+            score = result[1]
+            save_highscores(name, score)
+            display_win(name, score)
+        
+        return
+
+def end_game():
+    '''
+    Game's exit screen
+    '''
+
+    clear_screen()
+    titles()
+    slow_print(f'\n\n\n{" "*25}Thanks for playing!\n\n', 'yellow')
+    key_press()
+
 
 def main():
     '''
@@ -354,26 +395,11 @@ def main():
             elif menu_choice == 'c':
                 how_to_play()
             elif menu_choice == 'd':
+                end_game()
                 return
             else:
                 print('\nWrong input!\n')
                 menu_choice = ''
-
-
-def win(result):
-        name = result[0]
-        if result[1] == 'win':
-            score = 1000000
-            save_highscores(name, score)
-            display_win(name, score)
-        elif result[1] == 0:
-            display_win(name, 0)
-        else:
-            score = result[1]
-            save_highscores(name, score)
-            display_win(name, score)
-        
-        return
 
 if __name__ == "__main__":
     main()
