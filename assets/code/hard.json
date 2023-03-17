@@ -1,0 +1,396 @@
+{
+  "0":[
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f950658",
+    "correctAnswer": "Anthony Quinn",
+    "incorrectAnswers": [
+      "James Hong",
+      "Gary Cooper",
+      "Sam Shepard"
+    ],
+    "question": "Which actor has featued in films including Lawrence of Arabia and La Strada?",
+    "tags": [
+      "film",
+      "acting",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "625fd64ddc0dd3b72da64ce6",
+    "correctAnswer": "1972",
+    "incorrectAnswers": [
+      "1954",
+      "1960",
+      "1966"
+    ],
+    "question": "In which year was The Godfather released?",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f950668",
+    "correctAnswer": "Dennis Hopper",
+    "incorrectAnswers": [
+      "Tim Roth",
+      "Hugo Weaving",
+      "Warwick Davis"
+    ],
+    "question": "Which actor has featued in films including Apocalypse Now and Speed?",
+    "tags": [
+      "acting",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c347cc59eab6f94fa83",
+    "correctAnswer": "Christopher Walken",
+    "incorrectAnswers": [
+      "Bruce Dern",
+      "Richard Farnsworth",
+      "John Hurt"
+    ],
+    "question": "Who won the 1978 Academy Award for Best Supporting Actor for playing the role of Nick in The Deer Hunter?",
+    "tags": [
+      "acting",
+      "cult_films",
+      "academy_awards",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f9506a3",
+    "correctAnswer": "Melissa Leo",
+    "incorrectAnswers": [
+      "Naomi Watts",
+      "Keira Knightley",
+      "Kristin Scott Thomas"
+    ],
+    "question": "Which actor has featued in films including Cold Case and Veronica Mars?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c367cc59eab6f9501e0",
+    "correctAnswer": "Sidney Lumet",
+    "incorrectAnswers": [
+      "Steven Spielberg",
+      "Woody Allen",
+      "Martin Scorsese"
+    ],
+    "question": "Which director directed 12 Angry Men?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f950674",
+    "correctAnswer": "Jack Lemmon",
+    "incorrectAnswers": [
+      "Timothy Spall",
+      "Hugo Weaving",
+      "Tim Roth"
+    ],
+    "question": "Which actor has featued in films including Some Like It Hot and JFK?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c347cc59eab6f94fa6e",
+    "correctAnswer": "Morgan Freeman",
+    "incorrectAnswers": [
+      "Alan Alda",
+      "Thomas Haden Church",
+      "Jamie Foxx"
+    ],
+    "question": "Who won the 2004 Academy Award for Best Supporting Actor for playing the role of Eddie Scrap-Iron Dupris in Million Dollar Baby?",
+    "tags": [
+      "academy_awards",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "63dd25e3742e43ed64f1f040",
+    "correctAnswer": "Niles Crane",
+    "incorrectAnswers": [
+      "Frasier Moon",
+      "Roz Doyle",
+      "Martin Crane"
+    ],
+    "question": "What is the name of the character played by David Hyde Pierce on the show 'Frasier'?",
+    "tags": [
+      "film_and_tv",
+      "tv",
+      "sitcoms"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c347cc59eab6f94fa65",
+    "correctAnswer": "Christoph Waltz",
+    "incorrectAnswers": [
+      "Alan Arkin",
+      "Robert De Niro",
+      "Philip Seymour Hoffman"
+    ],
+    "question": "Who won the 2012 Academy Award for Best Supporting Actor for playing the role of Dr. King Schultz in Django Unchained?",
+    "tags": [
+      "academy_awards",
+      "acting",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c357cc59eab6f94fc46",
+    "correctAnswer": "\"You talking to me?\"",
+    "incorrectAnswers": [
+      "\"It's alive! It's alive!\"",
+      "\"Attica! Attica!\"",
+      "\"After all, tomorrow is another day!\""
+    ],
+    "question": "Which of these quotes is from the film 'Taxi Driver'?",
+    "tags": [
+      "quotes",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c347cc59eab6f94fad6",
+    "correctAnswer": "Roberto Benigni",
+    "incorrectAnswers": [
+      "Tom Hanks",
+      "Ian McKellen",
+      "Nick Nolte"
+    ],
+    "question": "Who won the 1998 Academy Award for Best Leading Actor for playing the role of Guido in Life Is Beautiful?",
+    "tags": [
+      "academy_awards",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "625740af9da29df7b05f73f0",
+    "correctAnswer": "After he becomes a quadriplegic, an aristocrat hires a young man to be his caregiver.",
+    "incorrectAnswers": [
+      "A naive youth leader is appointed to fill a vacancy in the U.S. Senate.",
+      "An archaeologist is hired by the government to find the Ark of the Covenant.",
+      "When a serial killer murders key political figures, a vigilante is forced to intervene."
+    ],
+    "question": "What is the plot of the movie Untouchable?",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f95065d",
+    "correctAnswer": "Timothy Spall",
+    "incorrectAnswers": [
+      "Paul Newman",
+      "Tobey Maguire",
+      "Dennis Hopper"
+    ],
+    "question": "Which actor has featued in films including Harry Potter and the Goblet of Fire and Lemony Snicket's A Series of Unfortunate Events?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c347cc59eab6f94fbf5",
+    "correctAnswer": "\"Cinderella story. Outta nowhere. A former greenskeeper, now, about to become the Masters champion. It looks like a mirac...It's in the hole! It's in the hole! It's in the hole!\"",
+    "incorrectAnswers": [
+      "\"As God is my witness, I'll never be hungry again.\"",
+      "\"Open the pod bay doors, please, HAL.\"",
+      "\"Oh, Jerry, don't let's ask for the moon. We have the stars.\""
+    ],
+    "question": "Which of these quotes is from the film 'Caddyshack'?",
+    "tags": [
+      "quotes",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f9505e4",
+    "correctAnswer": "Kenneth Branagh",
+    "incorrectAnswers": [
+      "Michael Ironside",
+      "Luke Evans",
+      "Tom Waits"
+    ],
+    "question": "Which actor has featured in films including Harry Potter and the Chamber of Secrets and Dunkirk?",
+    "tags": [
+      "acting",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f950786",
+    "correctAnswer": "Ben Affleck",
+    "incorrectAnswers": [
+      "Keanu Reeves",
+      "Donald Sutherland",
+      "Christian Bale"
+    ],
+    "question": "Which actor played the role of Batman in Batman v Superman: Dawn of Justice and Justice League?",
+    "tags": [
+      "actors",
+      "film",
+      "dc",
+      "comics",
+      "film_and_tv",
+      "batman"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f95067f",
+    "correctAnswer": "Paul Newman",
+    "incorrectAnswers": [
+      "Tim Roth",
+      "Hugo Weaving",
+      "Warwick Davis"
+    ],
+    "question": "Which actor has featued in films including The Sting and The Towering Inferno?",
+    "tags": [
+      "acting",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "625fd672dc0dd3b72da64cf1",
+    "correctAnswer": "1975",
+    "incorrectAnswers": [
+      "1970",
+      "1980",
+      "1985"
+    ],
+    "question": "One Flew Over the Cuckoo's Nest was released in which year?",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f950667",
+    "correctAnswer": "Warwick Davis",
+    "incorrectAnswers": [
+      "Timothy Spall",
+      "Jack Lemmon",
+      "Paul Newman"
+    ],
+    "question": "Which actor has featued in films including Rogue One and Return of the Jedi?",
+    "tags": [
+      "star_wars",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "hard",
+    "regions": [],
+    "isNiche": false
+  }
+]
+}

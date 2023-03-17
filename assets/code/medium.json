@@ -1,0 +1,398 @@
+{
+  "0":[
+  {
+    "category": "Film & TV",
+    "id": "6257407f9da29df7b05f73e2",
+    "correctAnswer": "After a girl is uprooted from her life, her emotions conflict on how best to navigate a new life.",
+    "incorrectAnswers": [
+      "A slacker seeks restitution for a rug ruined by debt collectors.",
+      "POWs are forced to build a railway, not knowing that allies are planning to destroy it.",
+      "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler."
+    ],
+    "question": "What is the plot of the movie Inside Out?",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c347cc59eab6f94fafc",
+    "correctAnswer": "Natalie Portman",
+    "incorrectAnswers": [
+      "Annette Bening",
+      "Nicole Kidman",
+      "Jennifer Lawrence"
+    ],
+    "question": "Who won the 2010 Academy Award for Best Leading Actress for playing the role of Nina Sayers/The Swan Queen in Black Swan?",
+    "tags": [
+      "acting",
+      "film",
+      "academy_awards",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f95078b",
+    "correctAnswer": "Gary Oldman",
+    "incorrectAnswers": [
+      "James Franco",
+      "George Clooney",
+      "Laurence Fishburne"
+    ],
+    "question": "Which actor has starred in both Harry Potter and Batman Begins?",
+    "tags": [
+      "film",
+      "acting",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "62573f419da29df7b05f7390",
+    "correctAnswer": "It's a Wonderful Life",
+    "incorrectAnswers": [
+      "WALL·E",
+      "Ratatouille",
+      "Psycho"
+    ],
+    "question": "Name the movie that matches the following plot summary: 'An angel is sent to help a man by showing him what life would have been like if he had never existed.'",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "63a0396fc7d86251f9b65c58",
+    "correctAnswer": "Scamp",
+    "incorrectAnswers": [
+      "Sparky",
+      "Max",
+      "Bolt"
+    ],
+    "question": "What is the name of the dog in the movie Lady and the Tramp?",
+    "tags": [
+      "film_and_tv",
+      "disney",
+      "film",
+      "animals",
+      "dogs"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "625fd74bdc0dd3b72da64d31",
+    "correctAnswer": "2003",
+    "incorrectAnswers": [
+      "2000",
+      "2006",
+      "2009"
+    ],
+    "question": "In which year was Pirates of the Caribbean: The Curse of the Black Pearl first released in the cinema?",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f95070e",
+    "correctAnswer": "Charlize Theron",
+    "incorrectAnswers": [
+      "Sandra Bæ Hovedr",
+      "Kirsten Dunst",
+      "Emma Thompson"
+    ],
+    "question": "Which actor has featued in films including Mad Max: Fury Road and Prometheus?",
+    "tags": [
+      "acting",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c367cc59eab6f950404",
+    "correctAnswer": "Halloween",
+    "incorrectAnswers": [
+      "A Nightmare on Elm Street",
+      "Scream",
+      "Child's Play"
+    ],
+    "question": "The Character Of Mike Myers Features Heavily In Which Series Of Horror Movies?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "62573f789da29df7b05f739e",
+    "correctAnswer": "The Departed",
+    "incorrectAnswers": [
+      "Double Indemnity",
+      "Indiana Jones and the Last Crusade",
+      "Groundhog Day"
+    ],
+    "question": "Name the movie that matches the following plot summary: 'An undercover cop and a mole in the police try to identify each other while infiltrating a gang.'",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f950729",
+    "correctAnswer": "Kate Winslet",
+    "incorrectAnswers": [
+      "Kathy Bates",
+      "Kirsten Dunst",
+      "Sandra Bæ Hovedr"
+    ],
+    "question": "Which actor has featued in films including Titanic and The Reader?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c347cc59eab6f94fbe8",
+    "correctAnswer": "\"Exercise gives you endorphins. Endorphins make you happy. Happy people just don’t shoot their husbands. They just don’t.\"",
+    "incorrectAnswers": [
+      "\"I'm gonna make him an offer he can't refuse.\"",
+      "\"I’m not drinking any f****** Merlot!\"",
+      "\"Listen to them. Children of the night. What music they make.\""
+    ],
+    "question": "Which of these quotes is from the film 'Legally Blonde'?",
+    "tags": [
+      "quotes",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "625fd66bdc0dd3b72da64cef",
+    "correctAnswer": "1980",
+    "incorrectAnswers": [
+      "1965",
+      "1970",
+      "1975"
+    ],
+    "question": "In which year was Star Wars: Episode V - The Empire Strikes Back first released in the cinema?",
+    "tags": [
+      "film",
+      "cult_films",
+      "star_wars",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c367cc59eab6f950401",
+    "correctAnswer": "Taxi Driver",
+    "incorrectAnswers": [
+      "The Graduate",
+      "Midnight Cowboy",
+      "Raging Bull"
+    ],
+    "question": "'You talkin to me?' is a line from which 1970's film?",
+    "tags": [
+      "film",
+      "quotes",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "62573f0b9da29df7b05f7384",
+    "correctAnswer": "Inception",
+    "incorrectAnswers": [
+      "A Beautiful Mind",
+      "The Sixth Sense",
+      "A Clockwork Orange"
+    ],
+    "question": "Name the movie that matches the following plot summary: 'A thief who steals secrets through dreams must plant an idea into the mind of a C.E.O.'",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f9506f9",
+    "correctAnswer": "Matthew McConaughey",
+    "incorrectAnswers": [
+      "Ryan Reynolds",
+      "Jim Carrey",
+      "Hugh Jackman"
+    ],
+    "question": "Which actor has featued in films including The Wolf of Wall Street and Dallas Buyers Club?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "624db9e8de6018633d31f6aa",
+    "correctAnswer": "Daniel Craig",
+    "incorrectAnswers": [
+      "Roger Moore",
+      "Sean Connery",
+      "Timothy Dalton"
+    ],
+    "question": "Who played the role of James Bond in Spectre?",
+    "tags": [
+      "james_bond",
+      "film",
+      "acting",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c3c7cc59eab6f951a32",
+    "correctAnswer": "Treehouse of Horror",
+    "incorrectAnswers": [
+      "Spooky Springfield",
+      "The Halloween Haunt",
+      "Evergreen Menace"
+    ],
+    "question": "What are The Simpsons Halloween specials known as?",
+    "tags": [
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "625740139da29df7b05f73c2",
+    "correctAnswer": "To Kill a Mockingbird",
+    "incorrectAnswers": [
+      "Cool Hand Luke",
+      "The Elephant Man",
+      "The Lion King"
+    ],
+    "question": "Name the movie that matches the following plot summary: 'A lawyer in Depression-era Alabama defends a black man against an undeserved rape charge.'",
+    "tags": [
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "622a1c377cc59eab6f950678",
+    "correctAnswer": "Hugo Weaving",
+    "incorrectAnswers": [
+      "Tobey Maguire",
+      "Timothy Spall",
+      "Elijah Wood"
+    ],
+    "question": "Which actor starred in films including The Lord of the Rings and The Matrix?",
+    "tags": [
+      "acting",
+      "film",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  },
+  {
+    "category": "Film & TV",
+    "id": "625699009da29df7b05f72ab",
+    "correctAnswer": "The Collector",
+    "incorrectAnswers": [
+      "Alexander Pierce",
+      "Howard Stark",
+      "Groot"
+    ],
+    "question": "In the Marvel Cinematic Unvierse, which character is played by Benicio Del Toro?",
+    "tags": [
+      "mcu",
+      "film",
+      "acting",
+      "marvel",
+      "comics",
+      "film_and_tv"
+    ],
+    "type": "Multiple Choice",
+    "difficulty": "medium",
+    "regions": [],
+    "isNiche": false
+  }
+]
+}
