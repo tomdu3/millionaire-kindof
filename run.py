@@ -200,8 +200,8 @@ def display_question(name, question_num, question, answers, correct_answer_index
     answer.
     '''
     titles(False)
-    treshold = question_points[(question_num-1)//5*5] if question_num > 5 else 0
-    slow_print(f'{50*" "}Points guaranteed: {"{:,}".format(treshold)}', 'red') 
+    threshold = question_points[(question_num-1)//5*5] if question_num > 5 else 0
+    slow_print(f'{50*" "}Points guaranteed: {"{:,}".format(threshold)}', 'red') 
     slow_print(f'\n{name}, this is a question for {"{:,}".format(question_points[question_num])} points:', 'yellow')
     slow_print(f'\n\n {question}')
     print('\n\nChoose a correct answer: \n')
@@ -220,7 +220,7 @@ def display_question(name, question_num, question, answers, correct_answer_index
     if choice_list.index(answer) != correct_answer_index:
         slow_print(f'{name}, that is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
         time.sleep(1)
-        return treshold
+        return threshold
     else:
         print(f"{name}, you're good! Well done.")
         time.sleep(1)
@@ -352,7 +352,7 @@ def main():
             elif menu_choice == 'b':
                 display_highscores()
             elif menu_choice == 'c':
-                how_to_play()()
+                how_to_play()
             elif menu_choice == 'd':
                 return
             else:
@@ -375,4 +375,5 @@ def win(result):
         
         return
 
-main()
+if __name__ == "__main__":
+    main()
