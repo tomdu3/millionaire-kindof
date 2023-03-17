@@ -207,7 +207,7 @@ def display_question(name, question_num, question,
                'yellow')
     slow_print(f'\n{name}, this is a question for '
                f'{"{:,}".format(question_points[question_num])} points:',
-               'yellow')
+               'red')
     slow_print(f'\n\n {question}')
     print('\n\nChoose a correct answer: \n')
     choice_list = ['a', 'b', 'c', 'd']
