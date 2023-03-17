@@ -72,7 +72,7 @@ def intro_screen():
     clear_screen()
     with open('./assets/text_files/titles.txt', 'r') as titles:
         for line in titles:
-            slow_print(line, 'yellow')
+            slow_print(line)
     key_press()
     how_to_play()
 
@@ -108,8 +108,8 @@ def how_to_play():
     clear_screen()
     with open('./assets/text_files/how_to_play.txt', 'r') as f:
         display_text = f.read()
-    slow_print(f'{" " * 25}How to play this Game\n', 'red')
-    slow_print(display_text, 'yellow')
+    slow_print(f'{" " * 25}How to play this Game\n', 'yellow')
+    slow_print(display_text)
     key_press()
 
     return
@@ -124,9 +124,9 @@ def titles(slow_printing=True):
         heading = f.read()
     clear_screen()
     if slow_printing:
-        slow_print(heading, 'blue')
+        slow_print(heading, 'yellow')
     else:
-        print(colored(heading, 'blue'))
+        print(colored(heading, 'yellow'))
 
     return
 
@@ -176,19 +176,19 @@ def insert_username():
     name = ''
     while not name:
         name = input(colored(
-            '\n\nInsert name - min 3 characters long, not '
-            'only numbers and no spaces:\n\n', 'yellow')).strip()
+            '\n\nInsert name - min 3 characters long, only '
+            'letters and no spaces:\n\n', 'white')).strip()
         if name.isdigit():
-            slow_print('Invalid name. Cannot be only a number!',
-                       'red')
+            slow_print('Invalid name. Cannot be a number!')
+            name = ''
+        elif not name.isalpha():
+            slow_print('Invalid name. Should contain only letters!')
             name = ''
         elif len(name) < 3:
             slow_print('Invalid name length. '
                        'Remember, at least 3 letters!', 'red')
             name = ''
-        elif ' ' in name:
-            slow_print('Invalid name. No spaces!', 'red')
-            name = ''
+
     return name
 
 
@@ -203,7 +203,8 @@ def display_question(name, question_num, question,
     titles(False)
     threshold = question_points[(question_num-1)//5*5] \
         if question_num > 5 else 0
-    slow_print(f'{50*" "}Points guaranteed: {"{:,}".format(threshold)}', 'red')
+    slow_print(f'{50*" "}Points guaranteed: {"{:,}".format(threshold)}',
+               'yellow')
     slow_print(f'\n{name}, this is a question for '
                f'{"{:,}".format(question_points[question_num])} points:',
                'yellow')
@@ -223,7 +224,7 @@ def display_question(name, question_num, question,
         else:
             break
     if choice_list.index(answer) != correct_answer_index:
-        slow_print(f'{name}, that is not the right answer. Right answer is'
+        slow_print(f'{name}, that is not the right answer. Right answer is '
                    f'{choice_list[correct_answer_index]}.\n', 'red')
         time.sleep(1)
         return threshold
@@ -270,7 +271,7 @@ def display_highscores():
     data = high_scores.get_all_values()
 
     titles()
-    slow_print('\nHIGH SCORES\n', 'red')
+    slow_print('\nHIGH SCORES\n', 'blue')
     if len(data) == 1:
         slow_print('\nNo scores available\n', 'blue')
     else:
@@ -283,7 +284,7 @@ def display_highscores():
             score = "{:,}".format(int(data[index][1]))
             date = data[index][2]
             slow_print(f'{username if len(username)<16 else username[:15]}{(15-len(username))*" "}|'
-                       f'{(13-len(score))*" "}{score} | {date}\n', 'yellow')
+                       f'{(13-len(score))*" "}{score} | {date}\n')
     print('\n')
     key_press()
     return
@@ -382,8 +383,9 @@ def end_game():
 
     clear_screen()
     titles()
-    slow_print(f'\n\n\n{" "*25}Thanks for playing!\n\n', 'yellow')
-    key_press()
+    slow_print(f'\n\n\n{" "*25}Thanks for playing!\n\n')
+    print('The end...')
+    key = getch.getch()
 
 
 def main():
@@ -399,7 +401,7 @@ def main():
         titles(False)
         print('\n\n\n')
         for item in MENU:
-            print(colored(item+'\n', 'red'))
+            print(item+'\n')
 
         menu_choice = ''
         while menu_choice == '':
