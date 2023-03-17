@@ -206,15 +206,15 @@ def display_question(name, question_num, question, answers, correct_answer_index
     for i in range(4):
         slow_print(f'{choice_list[i]}. {answers[i]}\n')
     while True:
-        answer = input(colored('\nChoose a, b, c, d or q: \n', 'yellow'))
-        if answer.lower() == 'q':
+        answer = input(colored('\nChoose a, b, c, d or q: \n', 'yellow')).lower().strip()
+        if answer == 'q':
             return question_points[question_num-1] if question_num > 1 else 0
-        elif answer.lower() not in choice_list:
+        elif answer not in choice_list:
             print("\n Invalid input! Please, do as you're told! \n")
             continue
         else:
             break
-    if choice_list.index(answer.lower()) != correct_answer_index:
+    if choice_list.index(answer) != correct_answer_index:
         slow_print(f'{name}, that is not the right answer. Right answer is {choice_list[correct_answer_index]}.\n', 'red')
         time.sleep(1)
         return treshold
@@ -240,7 +240,7 @@ def quiz_start():
             quiz.questions[i]['question'],
             quiz.questions[i]['answers'],
             quiz.questions[i]['correct_answer_index'])
-        if response in [0, 1000, 32000]:
+        if response in [item for item in question_points.values()]+[0]:
             return name, response
         else:
             pass
