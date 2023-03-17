@@ -177,7 +177,7 @@ def insert_username():
     while not name:
         name = input(colored(
             '\n\nInsert name - min 3 characters long, only '
-            'letters and no spaces:\n\n', 'white')).strip()
+            'letters and no spaces:\n', 'white')).strip()
         if name.isdigit():
             slow_print('Invalid name. Cannot be a number!')
             name = ''
