@@ -79,7 +79,7 @@ def intro_screen():
     
     key_press()
     
-    rules()
+    how_to_play()
 
     return
 
@@ -107,12 +107,15 @@ def clear_screen():
         os.system('clear')
 
 
-def rules():
+def how_to_play():
     '''
     Prints out the info about how to play the game
     '''
     clear_screen()
-    slow_print('Until the Rules are completed I am putting this text here', 'blue')
+    with open('./assets/text_files/how_to_play.txt', 'r') as f:
+        display_text = f.read()
+    slow_print(f'{" " * 25}How to play this Game\n', 'red')
+    slow_print(display_text, 'yellow')
     key_press()
 
     return
@@ -176,7 +179,7 @@ def insert_username():
 
     name = ''
     while not name:
-        name = input(colored('\n\nInsert name - min 3 characters long, not only numbers and no spaces: \n', 'yellow')).strip()
+        name = input(colored('\n\nInsert name - min 3 characters long, not only numbers and no spaces: \n\n', 'yellow')).strip()
         if name.isdigit():
             slow_print('Invalid name. Cannot be only a number!', 'red')
             name = ''
@@ -231,7 +234,7 @@ def quiz_start():
         
     titles()
     name = insert_username()
-    slow_print(f'\n\n\n{name}, you are on the way to be awarded a million useless points!!! WOOHOOOOO!', 'green')
+    slow_print(f'\n\n\n{name}, you are on the way to be awarded a million useless points!!! WOOHOOOOO!\n', 'green')
     key_press()
     for i in range(15):
         response = display_question(
@@ -349,7 +352,7 @@ def main():
             elif menu_choice == 'b':
                 display_highscores()
             elif menu_choice == 'c':
-                rules()
+                how_to_play()()
             elif menu_choice == 'd':
                 return
             else:
