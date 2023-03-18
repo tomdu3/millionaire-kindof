@@ -109,3 +109,18 @@ After defining goals of the game, we are delineating the necessary features:
     * On game end - displayed a new screen with appropriate messages, points and the high scores saved to Google Sheet
     * On application exit - displayed a new screen with Thank you note
 
+
+#### Structure
+A flowchart made in [LUCID](https://lucid.app.com/ "Link to Lucid") demonstrates the game's structure.
+
+<details>
+<summary>Flowchart Image</summary>
+
+![Flowchart](./assets/readme_files/flowchart.svg)
+
+</details>
+
+#### Skeleton
+Being the game in fact a terminal application, the skeleton plane would be somwhat in between the presented flowchart and the design. Therefore, the relative details will follow in the next section. 
+
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
