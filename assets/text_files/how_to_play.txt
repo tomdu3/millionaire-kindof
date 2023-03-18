@@ -3,9 +3,9 @@ This is an hommage to the Who Wants To Be a Millionaire TV game.
 After the intro screen, you're ask to enter your name. On the next screen
 you are given the self-explanatory Menu choice.
 
-Once the game starts, you're given a series of 15 questions. The questions
-show a progressive points after a correct answer. After every 5 questions
-the the level of difficulty increases.
+Once the game starts, you're given a series of 15 questions related to movies
+and TV. The questions show a progressive points after a correct answer. After
+every 5 questions the the level of difficulty increases.
 
 There are two safeguard thresholds (Points guaranteed), 1000 and 32000.
 With an incorrect answer, the game is over and, if passed the threshold,
