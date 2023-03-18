@@ -12,21 +12,20 @@
     3. [Development Planes](#Development-Planes)
     4. [Design](#Design)
 3. [Features](#Features)
-    1. [Design Features](#Design-Features)
-    2. [Existing Features](#Existing-Features)
-    3. [Features to Implement in the future](#Features-to-Implement-in-the-future)
+    1. [Existing Features](#Existing-Features)
+    2. [Features to Implement in the future](#Features-to-Implement-in-the-future)
 4. [Issues and Bugs](#Issues-and-Bugs)
 5. [Technologies Used](#Technologies-Used)
      1. [Main Languages Used](#Main-Languages-Used)
      2. [Libraries And Modules Used](#Libraries-And-Modules-Used)
-     3. [Frameworks And Programs Used](#Frameworks-And-Software-Used)
+     3. [Frameworks And Programs Used](#Frameworks-And-Programs-Used)
 6. [Testing](#Testing)
      1. [Testing.md](TESTING.md)
 7. [Deployment](#Deployment)
      1. [Deploying on Herokus](#Deploying-On-Heroku)
 8. [Credits](#Credits)
-     1. [Media](#Media)
-     2. [Code](#Code)
+     1. [Code](#Code)
+     2. [Contents](#Contents)
 9. [Acknowledgements](#Acknowledgements)
 ***
 
@@ -252,7 +251,7 @@ There are no known unfixed bugs.
 Testing is documented on a separate page [Testing MD Page](TESTING.md).
 
 ## Deployment
-The code was developped on Gitpod, and deployed on GitHub.
+The code was developed on Gitpod, and deployed on GitHub.
 
 ### Deploying on Heroku
 Deploying on Heroky required the following:
@@ -286,10 +285,10 @@ Deploying on Heroky required the following:
 ## Credits
 ### Code
 * In order to develop the application, the developer has consulted frequently the following web sites:
-    *[Stack Overflow](https://stackoverflow.com/ 'Link to Stack Overflow')
-    *[Geeks for Geeks](https://www.geeksforgeeks.org/ 'Link to Geeks for Geeks')
+    * [Stack Overflow](https://stackoverflow.com/ 'Link to Stack Overflow')
+    * [Geeks for Geeks](https://www.geeksforgeeks.org/ 'Link to Geeks for Geeks')
         * especially [Python sort list by second element of a sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
-        *[W3Schools](https://www.w3schools.com/ 'Link to W3Schools)
+    * [W3Schools](https://www.w3schools.com/ 'Link to W3Schools)
     * Info about the clearing screen in Python came from [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/ 'Link to explanation from Scaler for clear screen)
 
 ### Contents
