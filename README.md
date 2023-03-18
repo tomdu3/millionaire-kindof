@@ -35,7 +35,7 @@ The game Who Wants To Be A Millionaire Kind Of is the 3rd Portfolio Project at t
 
 The purpose of this project is to build a command-line application that allows the user to manage a common dataset about a particular domain.
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## UX
 ### Ideal User Demographic
@@ -57,7 +57,7 @@ There are two types of ideal users:
 * As a frequent user, I want have questions with a progressive difficulty.
 * As a frequent user, I want to improve my knowledge and score.
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ### Development-Planes
 To build a command-line application to give the user an experience similar to the one of the Who Wants To Be A Millionaire TV game, with the questions about movies.
@@ -123,7 +123,7 @@ A flowchart made in [LUCID](https://lucid.app.com/ "Link to Lucid") demonstrates
 #### Skeleton
 Being the game in fact a terminal application, the skeleton plane would be somwhat in between the presented flowchart and the design. Therefore, the relative details will follow in the next section. 
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ### Design
 The overall design of this command line application is quite simple. The developer at first decided to use different colours and ASCII text art. But, upon the deployment on Heroku, and some feedback from the testers, the developer opted for a more simpler design and less colourful in order to keep the best possible visibility of the application - beign a quiz game based on a lot of text that needs to be read.
@@ -132,7 +132,7 @@ For more engaging design, the devlopper has decided use a few screens at the int
 
 The interactive parts of the application are the user name insertion, the menu and the answering to the questions, which require a valid input and pressing of the 'Enter' key.
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Features
 ### Existing Features
@@ -191,7 +191,7 @@ The interactive parts of the application are the user name insertion, the menu a
     ![Slow Print Function](./assets/readme_files/slow_print.gif)
 
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ### Features to Implement in the future
 - The auxiliary features from the original TV game
@@ -199,7 +199,7 @@ The interactive parts of the application are the user name insertion, the menu a
 - The use of API for the questions
     The developer used the static JSON copy of the question from an API that had some limitations. Before the end of the project, the developer found one other API without the same limitations and without need of authentication to access the database, but didn't want to include it the final project. That was because the data structure was sligthly different and the developer didn't have time to properly test the API's reliability.
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 
 ## Issues and Bugs
@@ -218,7 +218,7 @@ When deployed on Heroku, the application had issues with the visibility of the A
 ### Unfixed Bugs
 There are no known unfixed bugs.
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Technologies Used
 ### Main Languages Used
@@ -245,7 +245,7 @@ There are no known unfixed bugs.
 - [Peek](https://github.com/phw/peek) was used to make screencasts for the documentation.
 
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 
 ## Testing
@@ -280,7 +280,7 @@ Deploying on Heroky required the following:
 * Once the app is built, and the link click "View", click on it to go to the site with the deployed Python app.
 
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 
 ## Credits
@@ -296,7 +296,7 @@ Deploying on Heroky required the following:
 * For the questions database, the developer has used the following web API:
     * [The Trivia API](https://the-trivia-api.com/) The questions are taken from the Film and TV category on the web API app and copied into the json files divided by difficulty level (easy, medium, hard).
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ## Acknowledgements
 I would like to thank:
@@ -304,6 +304,6 @@ I would like to thank:
 * My colleagues from the Code Institute who tested my code and gave me some wonderful feedback.
 * To my inner circle, who are secretly following my ongoing coding adventure.
 
-[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
 ***
