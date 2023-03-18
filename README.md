@@ -242,7 +242,7 @@ There are no known unfixed bugs.
 - [GitPod](https://gitpod.io/ "Link to GitPod") was used for writing, commiting, and pushing code to GitHub.
 - [GitHub](https://github.com/ "Link to GitHub")
 - [Am I Responsive?](https://ui.dev/amiresponsive "Link to Am I Responsive") was used for the web page picture of this README.md
-- [Peek](https://github.com/phw/peek) Peek was used to make screencasts for the documentation.
+- [Peek](https://github.com/phw/peek) was used to make screencasts for the documentation.
 
 
 [Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
