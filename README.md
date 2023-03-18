@@ -22,7 +22,7 @@
 6. [Testing](#Testing)
      1. [Testing.md](TESTING.md)
 7. [Deployment](#Deployment)
-     1. [Deploying on Herokus](#Deploying-On-Heroku)
+     1. [Deploying on Heroku](#Deploying-On-Heroku)
 8. [Credits](#Credits)
      1. [Code](#Code)
      2. [Contents](#Contents)
