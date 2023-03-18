@@ -134,3 +134,63 @@ The interactive parts of the application are the user name insertion, the menu a
 
 [Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
+## Features
+### Existing Features
+- **Different info screens**
+    - These are presented in different moment of the game. Practically every feature is related to these screens, e.g.:
+    <details>
+    <summary>Screen Examples</summary>
+    Intro Screen
+
+    ![Intro Screen](./assets/readme_files/intro_screen.png)
+
+    End Screen
+
+    ![End Screen](./assets/readme_files/end_screen.png)
+    </details>
+
+- **Question database loader**
+    * At the beginning of the application the json files are loaded with the data stored locally, but produced by the API https://the-trivia-api.com/. At first, the developer copied the data recevied into the code of another Python file that was imported to the main file. After organizing the data in json files, the developer integrated the code into main file. The three json files contain different difficulety level questions, and each 15 different ones.
+
+    ![JSON Files](./assets/readme_files/json_files.png)
+
+- **How to play the game instructions display**
+    * The instructions are read from the corresponding txt file and displayed on screen. They appear after the intro screen and later when chosen from the menu.
+
+    ![How To Play Instructions Screen](./assets/readme_files/how_to_play_screen.png)
+
+- **Player's Name Input**
+    * After the instructions, the next screen requires user to enter they name. The valid input corresponds to a string containing only letters and of minimum 3 characters length.
+
+    ![Player's Name Input](./assets/readme_files/insert_name_screen.png)
+
+- **Menu**
+    * Menu is the central feature of the application. It gives to the user four possibilities to proceed: start quiz, show the instructions, show the high scores, or exit from the application.
+
+    ![Menu](./assets/readme_files/menu_screen.png)
+
+- **Quiz function**
+    * This functionality immediately generates 15 randomly selected questions, 5 of each level, through the dedicated Class. There are controllers which guarantee that the questions woudn't be repeated. Once that is over, the quiz starts with the first question. On the displayed screen, there are information about the point value of the question and the threshold (points guaranteed) if they were reached. Then appears the question and four answeres given with the letters a, b, c, and d as a choice. There's fifth option given to the user, that of q if they wish to quit the game with the so far accumulated points. If the wrong answer is given, the quiz ends and the points fall to the threshold. If none is reached, the quiz ends with 0 points, relative screen, and no high score saved. If the quiz ends with some points or the million is reached, different screens are presented and the score is saved in the high scores Google Sheet (name, points, date). After the end quiz screen, Menu returns.
+
+    ![Quiz Question Screen](./assets/readme_files/question_screen.png)
+    ![End Quiez Screen](./assets/readme_files/end_quiz_screen.png)
+
+
+
+- **High Scores Display**
+    * This function first fetches the data from the high scores Google Sheet and then presents them in order of the points received. So, the most successful scores come first.
+
+    ![High Scores Screen](./assets/readme_files/high_scores_screen.png)
+
+- **Game Exit**
+    - If this choice is made, the game finishes with the thank you note to the user.
+
+    ![Game End Screen](./assets/readme_files/end_screen.png)
+
+- **Slow print function**
+    - This feature is present in almost every screen in the application. It gives the user the impression of an animation. In fact, it consists of the printing the characters of the string on by one with a time delay.
+
+    ![Slow Print Function](./assets/readme_files/slow_print.gif)
+
+    
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
