@@ -91,4 +91,21 @@ The application is supposed to enable the user to:
 The Developer/Administrator needs to receive:
     * Player's Name
 
+#### Scope
+
+After defining goals of the game, we are delineating the necessary features:
+* Required functionalities
+    * Intro screen display
+    * Question database loader
+    * How to play the game instructions display
+    * High scores display
+    * Global Menu
+    * Quiz starter
+    * Quiz questions generator
+    * Points/Threshold display
+    * Question display and guess
+    * Answer validator
+    * Correct answer displayed if wrongly answered or congratulatory message if answered correctly
+    * On game end - displayed a new screen with appropriate messages, points and the high scores saved to Google Sheet
+    * On application exit - displayed a new screen with Thank you note
 
