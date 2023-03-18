@@ -32,7 +32,7 @@
 ## Introduction
 The game Who Wants To Be A Millionaire Kind Of is the 3rd Portfolio Project at the Code Institute. It is an hommage to the famous TV game that conquered the world. In this version, the questions are related to the Movies and TV.
 
-The purpose of this project is to build a command-line application that allows the user to manage a common dataset about a particular domain.
+The purpose of this project is to build a command-line application in Python that allows the user to manage a common dataset about a particular domain.
 
 [Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
@@ -278,6 +278,7 @@ Deploying on Heroky required the following:
 
 * Once the app is built, and the link click "View", click on it to go to the site with the deployed Python app.
 
+The application is finally deployed on the link [https://millionaire-kindof.herokuapp.com/](https://millionaire-kindof.herokuapp.com/).
 
 [Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
