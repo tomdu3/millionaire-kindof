@@ -35,5 +35,27 @@ The game Who Wants To Be A Millionaire Kind Of is the 3rd Portfolio Project at t
 
 The purpose of this project is to build a command-line application that allows the user to manage a common dataset about a particular domain.
 
-[Back to top ⇧](#who-wants-to-be-a-millionaire-kind-of)
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
+## UX
+### Ideal User Demographic
+There are two types of ideal users:
+* New User
+* Current User
+
+### User-Stories
+#### New User Goals
+* As a new user, I want easily navigate through the application.
+* As a new user, I want easily consult and find the rules.
+* As a new user, I want to test my knowledge about the movies.
+* As a new user, I want to have learn something while having fun.
+
+
+#### Current User Goals
+* As a current user, I want a game similar to the Who Wants To Be A Millionaire TV game.
+* As a frequent user, I want to test my knowledge about the movies.
+* As a frequent user, I want have questions with a progressive difficulty.
+* As a frequent user, I want to improve my knowledge and score.
+
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
