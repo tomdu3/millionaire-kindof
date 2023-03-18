@@ -124,3 +124,13 @@ A flowchart made in [LUCID](https://lucid.app.com/ "Link to Lucid") demonstrates
 Being the game in fact a terminal application, the skeleton plane would be somwhat in between the presented flowchart and the design. Therefore, the relative details will follow in the next section. 
 
 [Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
+### Design
+The overall design of this command line application is quite simple. The developer at first decided to use different colours and ASCII text art. But, upon the deployment on Heroku, and some feedback from the testers, the developer opted for a more simpler design and less colourful in order to keep the best possible visibility of the application - beign a quiz game based on a lot of text that needs to be read.
+
+For more engaging design, the devlopper has decided use a few screens at the intro, end game, end quiz, display high scores, etc. ASCII art is used for a games 'LOGO' that repeat itself throughout the application. For the passages from the screens, the developer opted for a simple keypress detection.
+
+The interactive parts of the application are the user name insertion, the menu and the answering to the questions, which require a valid input and pressing of the 'Enter' key.
+
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
