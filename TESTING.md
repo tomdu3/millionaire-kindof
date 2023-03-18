@@ -97,4 +97,10 @@
 
 [Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of-Testing-Page)
 
+## Automated Testing
+### Code Validation
+* PEP8 CI Python Linter 
+
+![PEP8 CI Python Linter](./assets/readme_files/testing/pep8ci_validation.png)
+
 
