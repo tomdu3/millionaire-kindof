@@ -1,14 +1,13 @@
+import datetime
 import getch
+import gspread
+import json
 import os
 import random
 import time
-import gspread
-import datetime
 import sys
 from google.oauth2.service_account import Credentials
 from termcolor import colored
-from assets.code.questions_data \
-    import easy_questions, medium_questions, hard_questions, question_points
 
 MENU = [
     'a. Start Quiz Game',
@@ -16,6 +15,7 @@ MENU = [
     'c. How to Play Instructions',
     'd. Quit the Game'
 ]
+
 
 SCOPE = [
   'https://www.googleapis.com/auth/spreadsheets',
@@ -28,6 +28,33 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('millionaire_highscores')
 high_scores = SHEET.worksheet('high_scores')
+
+
+# data from the site https://the-trivia-api.com/
+with open('./assets/json/easy.json', 'r') as f:
+    easy_questions = json.load(f)['0']
+with open('./assets/json/medium.json', 'r') as f:
+    medium_questions = json.load(f)['0']
+with open('./assets/json/hard.json', 'r') as f:
+    hard_questions = json.load(f)['0']
+
+question_points = {
+  1: 100,
+  2: 200,
+  3: 300,
+  4: 500,
+  5: 1000,
+  6: 2000,
+  7: 4000,
+  8: 8000,
+  9: 16000,
+  10: 32000,
+  11: 64000,
+  12: 125000,
+  13: 240000,
+  14: 500000,
+  15: 1000000,
+}
 
 
 class Quiz:
@@ -105,6 +132,7 @@ def how_to_play():
     '''
     Prints out the info about how to play the game
     '''
+
     clear_screen()
     with open('./assets/text_files/how_to_play.txt', 'r') as f:
         display_text = f.read()
@@ -144,8 +172,6 @@ def choose_question(level):
         question = random.choice(medium_questions)
     elif level == 'hard':
         question = random.choice(hard_questions)
-    else:
-        raise ValueError('Invalid level Value')
 
     # copy the incorrect answers with a correct one into
     # one list and shuffle it
@@ -178,16 +204,14 @@ def insert_username():
         name = input(colored(
             '\n\nInsert name - min 3 characters long, only '
             'letters and no spaces:\n', 'white')).strip()
-        if name.isdigit():
-            slow_print('Invalid name. Cannot be a number!')
-            name = ''
-        elif not name.isalpha():
+        if not name.isalpha():
             slow_print('Invalid name. Should contain only letters!')
             name = ''
         elif len(name) < 3:
             slow_print('Invalid name length. '
                        'Remember, at least 3 letters!', 'red')
             name = ''
+
     slow_print(f'\n\n\n{name}, you are on the way to be awarded a '
                f'million useless points!!! WOOHOOOOO!\n', 'green')
     key_press()
@@ -281,6 +305,7 @@ def display_highscores():
             username = data[index][0]
             score = "{:,}".format(int(data[index][1]))
             date = data[index][2]
+            # if username length is too big, it gets trimmed for the display
             slow_print(f'{username if len(username)<16 else username[:15]}'
                        f'{(15-len(username))*" "}|'
                        f'{(13-len(score))*" "}{score} | {date}\n')
@@ -296,6 +321,8 @@ def save_highscores(username, score):
     '''
 
     global high_scores
+
+    # it converts the date into a valid date format for Google Sheets
     date = datetime.date.today().strftime('%d/%m/%Y')
     new_row = [username, score, date]
     high_scores.append_row(new_row)

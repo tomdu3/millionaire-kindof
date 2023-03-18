@@ -7,7 +7,7 @@ Once the game starts, you're given a series of 15 questions. The questions
 show a progressive points after a correct answer. After every 5 questions
 the the level of difficulty increases.
 
-There are two safeguard thresholds (Point guaranteed), 1000 and 32000.
+There are two safeguard thresholds (Points guaranteed), 1000 and 32000.
 With an incorrect answer, the game is over and, if passed the threshold,
 you end up with the threshold amount of points and the score in high scores.
 
