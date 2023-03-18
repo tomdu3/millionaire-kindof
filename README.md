@@ -287,16 +287,16 @@ Deploying on Heroky required the following:
 
 ## Credits
 ### Code
-*In order to develop the application, the developer has consulted frequently the following web sites:
+* In order to develop the application, the developer has consulted frequently the following web sites:
     *[Stack Overflow](https://stackoverflow.com/ 'Link to Stack Overflow')
     *[Geeks for Geeks](https://www.geeksforgeeks.org/ 'Link to Geeks for Geeks')
         * especially [Python sort list by second element of a sublist](https://www.geeksforgeeks.org/python-sort-list-according-second-element-sublist/)
         *[W3Schools](https://www.w3schools.com/ 'Link to W3Schools)
-    *Info about the clearing screen in Python came from [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/ 'Link to explanation from Scaler for clear screen)
+    * Info about the clearing screen in Python came from [Scaler](https://www.scaler.com/topics/how-to-clear-screen-in-python/ 'Link to explanation from Scaler for clear screen)
 
 ### Contents
-*For the questions database, the developer has used the following web API:
-    *[The Trivia API](https://the-trivia-api.com/) The questions are taken from the Film and TV category on the web API app and copied into the json files divided by difficulty level (easy, medium, hard).
+* For the questions database, the developer has used the following web API:
+    * [The Trivia API](https://the-trivia-api.com/) The questions are taken from the Film and TV category on the web API app and copied into the json files divided by difficulty level (easy, medium, hard).
 
 [Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
