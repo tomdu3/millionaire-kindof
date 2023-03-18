@@ -221,3 +221,65 @@ When deployed on Heroku, the application had issues with the visibility of the A
 There are no known unfixed bugs.
 
 [Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
+## Technologies Used
+### Main Languages Used
+- Python3
+
+### Libraries And Modules Used
+- **json** - JSON encoder and decoder module
+- **getch** - The module that gets a character from user input, with no output
+- **os** - This module provides a portable way of using operating system dependent functionality
+- **random** - Random variable generators module.
+- **time** - This module provides various functions to manipulate time values.
+- **datetime** - Concrete date/time and related types module.
+- **sys** - This module provides access to some objects used or maintained by the interpreter and to functions that interact strongly with the interpreter.
+- **gspread** - Google Spreadsheets client library.
+- **google.oauth2.service_account** - A module for the Google authentication.
+- **termcolor** - The module for ANSI color formatting for output in terminal.
+
+
+### Frameworks And Programs Used
+- [Heroku](https://heroku.com/ "Link to Heroku") was used for the app deployment.
+- [GitPod](https://gitpod.io/ "Link to GitPod") was used for writing, commiting, and pushing code to GitHub.
+- [GitHub](https://github.com/ "Link to GitHub")
+- [Am I Responsive?](https://ui.dev/amiresponsive "Link to Am I Responsive") was used for the web page picture of this README.md
+- [Peek](https://github.com/phw/peek) Peek was used to make screencasts for the documentation.
+
+
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
+
+## Testing
+Testing is documented on a separate page [Testing MD Page](TESTING.md).
+
+## Deployment
+The code was developped on Gitpod, and deployed on GitHub.
+
+### Deploying on Heroku
+Deploying on Heroky required the following:
+
+* Type "pip3 freeze > requirements.txt" in your Github terminal to update the requirements.txt file with the list of dependencies used in the project. Save, commit and push.
+
+* On Heroku web site, these two steps are necessary if the developer don't have a Heroku account yet:
+    * Create an Heroku account, select Python as the 'Primary development language'.
+    * Open the email sent to your address and click the link to verify your email address. Follow the instructions to create a password and log in.
+
+* On Heroku web site, once you're logged in, click the 'create new app' button on the dashboard. Name your app, select your region and click 'Create App'
+
+* In the "Settings" tab, add both the python and node.js build packs.
+
+* Create a "Config VAR" named 'CREDS' KEY and copy/paste the creds.json file in it.
+
+* Create another "Config VAR" called PORT as the KEY with 8000 as VALUE.
+
+* In the "Deploy" tab, choose GitHub as a deployment method.
+
+* Search for the right repository (in this case 'millionaire-kindof').
+
+* Click on deploy branch.
+
+* Once the app is built, and the link click "View", click on it to go to the site with the deployed Python app.
+
+
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
