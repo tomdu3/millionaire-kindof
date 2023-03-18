@@ -1,11 +1,11 @@
 import json
 
 # data from the site https://the-trivia-api.com/
-with open('./assets/code/easy.json', 'r') as f:
+with open('./assets/json/easy.json', 'r') as f:
     easy_questions = json.load(f)['0']
-with open('./assets/code/medium.json', 'r') as f:
+with open('./assets/json/medium.json', 'r') as f:
     medium_questions = json.load(f)['0']
-with open('./assets/code/hard.json', 'r') as f:
+with open('./assets/json/hard.json', 'r') as f:
     hard_questions = json.load(f)['0']
 
 question_points = {
