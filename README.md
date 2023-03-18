@@ -192,5 +192,32 @@ The interactive parts of the application are the user name insertion, the menu a
 
     ![Slow Print Function](./assets/readme_files/slow_print.gif)
 
-    
+
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
+### Features to Implement in the future
+- The auxiliary features from the original TV game
+     There are three auxiliary features in the original TV game: call a friend, ask the audience, and 50:50 options. Because of lack of time, the developer couldn't make it to implement these features. The complex algorithm for randomization with 80% of probabilty for the right answer of the first two features would have to wait for some other moment.
+- The use of API for the questions
+    The developer used the static JSON copy of the question from an API that had some limitations. Before the end of the project, the developer found one other API without the same limitations and without need of authentication to access the database, but didn't want to include it the final project. That was because the data structure was sligthly different and the developer didn't have time to properly test the API's reliability.
+
+[Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
+
+## Issues and Bugs
+Several issues were encountered during developement but the most troublesome are listed below.
+
+- **Validation Errors**
+In different moments of the development, the validation bugs happened. First one was the unrecognized choice of a letter when written as capital letter. That was immediately corrected by validating same letters, being capital or lower. Afterwards, with the username, the developer didn't take into consideration the possibility of user entering characters that weren't letters. That bug was pointed out by the mentor and surfaced again in the testing phase of the colleagues on Slack. That bug was also corrected. 
+
+- **Quiz continuing even if quit selected**
+There was a bug because of which the quiz continued although the user selected to quit. The error was due to selection of the possibilities of gaining only threshold points (as in choosing the wrong answer), whilst in quitting, the user can save all the points they won. That was also corrected.
+
+- **Different display issues on Herokue**
+When deployed on Heroku, the application had issues with the visibility of the ASCII art, and some selected colours were barely visible. That was pointed out by some colleagues from Slack in the testing phase. The developer decided to generate new ASCII art texts and select the plain colours to garantee the visibility of the text.
+
+
+### Unfixed Bugs
+There are no known unfixed bugs.
+
 [Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
