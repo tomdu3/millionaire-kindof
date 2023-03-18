@@ -59,3 +59,36 @@ There are two types of ideal users:
 
 [Back to top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
+### Development-Planes
+To build a command-line application to give the user an experience similar to the one of the Who Wants To Be A Millionaire TV game, with the questions about movies.
+
+#### Strategy
+Strategy incorporates user needs as well as product objectives. This application will focus on the following target audience, divided into three main categories
+* Audience
+    * New Users
+    * Current Users
+
+* Demographic
+    * All ages
+
+* Psychographic:
+    * Movie fan
+    * Quiz fan
+    * Problem solver
+
+The application is supposed to enable the user to:
+* Play the Who Wants To Be A Millionaire
+* Insert a player name
+* Answer to a series of randomly selected questions from the database
+* Experience a progressive difficulty level
+* Be aware of the points gained, threshold points and won points
+* Know when answers wrongly and learn the correct answer
+* Enter the high score databes if there are some points won at the game end
+* Restart the game if wanted with a new set of questions
+* Read the instructions about the game
+* See the high scores from the database
+
+The Developer/Administrator needs to receive:
+    * Player's Name
+
+
