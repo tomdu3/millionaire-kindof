@@ -104,3 +104,15 @@
 ![PEP8 CI Python Linter](./assets/readme_files/testing/pep8ci_validation.png)
 
 
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of-Testing-Page)
+
+
+## User testing 
+I want to thank dear colleagues for the CI on the Slack who helped me enormously with testing and suggestions:
+* Victoria, Richard, Aurelien, Louie, Jim, ... 
+* My Mentor Koko who pointed out the validation issues and, as always, was absolutely right in every observation.
+
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of-Testing-Page)
+
+***
+
