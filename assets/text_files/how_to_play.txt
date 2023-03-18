@@ -1,10 +1,12 @@
                        
 This is an hommage to the Who Wants To Be a Millionaire TV game.
-On the first screen, you are given the self-explanatory Menu choice.
+After the intro screen, you're ask to enter your name. On the next screen
+you are given the self-explanatory Menu choice.
 
-When you choose to start the game, you are first asked to insert your name.
+Once the game starts, you're given a series of 15 questions. The questions
+show a progressive points after a correct answer. After every 5 questions
+the the level of difficulty increases.
 
-The questions show a progressive points increase after a correct answer.
 There are two safeguard thresholds (Point guaranteed), 1000 and 32000.
 With an incorrect answer, the game is over and, if passed the threshold,
 you end up with the threshold amount of points and the score in high scores.
@@ -13,5 +15,4 @@ If you have 0 points at the end of the game, you don't enter the high scores.
 When a question is presented you can choose 'a', 'b', 'c', 'd', or 'q'.
 The first four correspond to the answers given. If you wish to quit by choosing
 'q', the game ends and your score enters the high scores.
-
-Happy gaming!
+                                                            Happy gaming!

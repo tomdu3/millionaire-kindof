@@ -172,7 +172,7 @@ def insert_username():
     '''
     Insert username function
     '''
-
+    titles()
     name = ''
     while not name:
         name = input(colored(
@@ -188,6 +188,9 @@ def insert_username():
             slow_print('Invalid name length. '
                        'Remember, at least 3 letters!', 'red')
             name = ''
+    slow_print(f'\n\n\n{name}, you are on the way to be awarded a '
+               f'million useless points!!! WOOHOOOOO!\n', 'green')
+    key_press()
 
     return name
 
@@ -229,22 +232,17 @@ def display_question(name, question_num, question,
         time.sleep(1)
         return threshold
     else:
-        print(f"{name}, you're good! Well done.")
+        print(f"{name}, you're good! Well done!")
         time.sleep(1)
 
 
-def quiz_start():
+def quiz_start(name):
     '''
     Quiz control function
     '''
 
     quiz = Quiz()
 
-    titles()
-    name = insert_username()
-    slow_print(f'\n\n\n{name}, you are on the way to be awarded a '
-               f'million useless points!!! WOOHOOOOO!\n', 'green')
-    key_press()
     for i in range(15):
         response = display_question(
             name,
@@ -395,6 +393,7 @@ def main():
     '''
 
     intro_screen()
+    name = insert_username()
 
     # Menu section
     while True:
@@ -409,7 +408,7 @@ def main():
             menu_choice = input(colored('Choose a, b, c, or d:'
                                 ' \n\n', 'yellow')).lower().strip()
             if menu_choice == 'a':
-                result = quiz_start()
+                result = quiz_start(name)
                 win(result)
             elif menu_choice == 'b':
                 display_highscores()
