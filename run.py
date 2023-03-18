@@ -375,14 +375,14 @@ def win(result):
     return
 
 
-def end_game():
+def end_game(name):
     '''
     Game's exit screen
     '''
 
     clear_screen()
     titles()
-    slow_print(f'\n\n\n{" "*25}Thanks for playing!\n\n')
+    slow_print(f'\n\n\n{" "*20}{name}, thanks for playing!\n\n')
     print('The end...')
     key = getch.getch()
 
@@ -415,7 +415,7 @@ def main():
             elif menu_choice == 'c':
                 how_to_play()
             elif menu_choice == 'd':
-                end_game()
+                end_game(name)
                 return
             else:
                 print('\nWrong input!\n')
