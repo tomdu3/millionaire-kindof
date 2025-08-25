@@ -26,4 +26,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Your application's startup command
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
