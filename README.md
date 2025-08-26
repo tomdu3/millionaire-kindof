@@ -3,7 +3,7 @@
 # Who Wants To Be A Millionaire Kind Of
 ![Am I Responsive Image](./assets/readme_files/amiresponsive.png)
 
-[View the live project here](https://millionaire-kindof.herokuapp.com/)
+[View the live project here](https://millionaire.tomdcoding.net/)
 ## Table of contents
 1. [Introduction](#Introduction)
 2. [UX](#UX)
@@ -23,6 +23,7 @@
      1. [Testing.md](TESTING.md)
 7. [Deployment](#Deployment)
      1. [Deploying on Heroku](#Deploying-On-Heroku)
+     2. [Deploying on Coolify](#Deploying-On-Coolify)
 8. [Credits](#Credits)
      1. [Code](#Code)
      2. [Contents](#Contents)
@@ -253,7 +254,9 @@ Testing is documented on a separate page [Testing MD Page](TESTING.md).
 ## Deployment
 The code was developed on Gitpod, and deployed on GitHub.
 
-### Deploying on Heroku
+### ~~Deploying on Heroku~~
+(deprecated)
+
 Deploying on Heroky required the following:
 
 * Type "pip3 freeze > requirements.txt" in your Github terminal to update the requirements.txt file with the list of dependencies used in the project. Save, commit and push.
@@ -279,6 +282,111 @@ Deploying on Heroky required the following:
 * Once the app is built, and the link click "View", click on it to go to the site with the deployed Python app.
 
 The application is finally deployed on the link [https://millionaire-kindof.herokuapp.com/](https://millionaire-kindof.herokuapp.com/).
+
+[Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
+
+### Deploying on Coolify
+
+Because of the changes Heroku introduced, that is deprecating the Free Tier and the last one of deprecation of the previous Python versions' based stacks, the app is deployed on Coolify instead. [Coolify](https://coolify.io/) is an open-source platform that simplifies deploying and managing web applications and services with a user-friendly interface. The app is now selfhosted on [Oracle Cloud](https://www.oracle.com/cloud/) Free Tier. The link is [https://millionaire.tomdcoding.net/](https://millionaire.tomdcoding.net/).
+
+There were some changes that needed to be done, namely creation of the Dockerfile and dealing with the `creed.json` file .
+#### Dockerfile
+
+Since this is a node app for the deployment of the python terminal app on a website, the Docker image is `node:18`.
+
+```
+WORKDIR /usr/src/app
+
+# Install system dependencies including Python (and openssl as a fallback for base64)
+RUN apt-get update \
+ && apt-get install -y python3 python3-pip python3-venv ca-certificates openssl \
+ && rm -rf /var/lib/apt/lists/*
+
+# Copy package files
+COPY package*.json ./
+
+# Install Node.js dependencies
+RUN npm install
+
+# Copy Python requirements
+COPY requirements.txt ./
+
+# Create and activate virtual environment
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application
+COPY . .
+
+# Add entrypoint that materializes the secret JSON
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Ensure the entrypoint runs BEFORE your CMD
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Your application's startup command
+CMD ["node", "index.js"]
+```
+
+The script `entrypoint.sh` will be explained in the next section.
+
+#### Creds.json
+
+The `creds.json` file cannot be entered easily as a secret file to the Docker container. Therefore, the developer has decided to convert the contents of the file, that contains access details to the Google Sheets, to an environmental variable `CREDS_JSON_B64`.
+On Linux, the conversion of the file occurs by calling this command:
+
+```sh
+base64 < creds.json | tr -d '\n'
+```
+
+The value given is the value for the `CREDS_JSON_B64` environmental variable that can be added to Coolify deployment details.
+To convert this value to the `creds.json` inside of the Docker container, the script `entrypoint.sh` needs to be added to the repo inside of the `docker` folder.
+
+```sh
+#!/bin/sh
+set -eu
+
+APP_DIR="${APP_DIR:-/usr/src/app}"
+TARGET_PATH="${CREDS_JSON_PATH:-$APP_DIR/creds.json}"
+
+if [ "${CREDS_JSON_B64:-}" ]; then
+  mkdir -p "$(dirname "$TARGET_PATH")"
+
+  # Avoid pipeline; write to a temp file then decode
+  tmp="/tmp/creds.b64"
+  printf "%s" "$CREDS_JSON_B64" > "$tmp"
+
+  if command -v base64 >/dev/null 2>&1; then
+    base64 -d "$tmp" > "$TARGET_PATH"
+  elif command -v openssl >/dev/null 2>&1; then
+    openssl base64 -d -A -in "$tmp" -out "$TARGET_PATH"
+  elif command -v python3 >/dev/null 2>&1; then
+    python3 - "$tmp" "$TARGET_PATH" <<'PY'
+import sys, base64, pathlib
+raw = pathlib.Path(sys.argv[1]).read_text()
+pathlib.Path(sys.argv[2]).write_bytes(base64.b64decode(raw))
+PY
+  else
+    echo "No decoder available (base64/openssl/python3)." >&2
+    exit 1
+  fi
+
+  rm -f "$tmp"
+  chmod 600 "$TARGET_PATH" || true
+else
+  echo "Warning: CREDS_JSON_B64 is not set; creds.json not created." >&2
+fi
+
+exec "$@"
+```
+
+Together with the `Dockerfile`, this script converts the value of the encoded environmental variable `CREDS_JSON_B64` into `creds.json` file inside of the creation of the Docker container.
+Once the container runs, the said file is available for the execution of the Python app.
+
 
 [Back to the top ⇧](#Who-Wants-To-Be-A-Millionaire-Kind-Of)
 
